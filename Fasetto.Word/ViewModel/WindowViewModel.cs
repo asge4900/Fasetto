@@ -55,10 +55,10 @@ namespace Fasetto.Word
             };
 
             //Create commands
-            MinimizeCommand = new RelayCommand(() => this.window.WindowState = WindowState.Maximized);
+            MinimizeCommand = new RelayCommand(() => this.window.WindowState = WindowState.Minimized);
             MaximizeCommand = new RelayCommand(() => this.window.WindowState ^= WindowState.Maximized);
             CloseCommand = new RelayCommand(() => this.window.Close());
-            MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(this.window, GetMousePosition()));
+            MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(this.window, GetMousePosition()));            
         }
 
         #endregion
@@ -93,6 +93,16 @@ namespace Fasetto.Word
         #region Properties
 
         /// <summary>
+        /// The smallest width the window can go to
+        /// </summary>
+        public double WindowMinimumWidth { get; set; } = 400;
+
+        /// <summary>
+        /// The smallest height the window can go to
+        /// </summary>
+        public double WindowMinimumHeight { get; set; } = 400;
+
+        /// <summary>
         /// The size of the resize border around the window
         /// </summary>
         public int ResizeBorder { get; set; } = 6;
@@ -101,6 +111,11 @@ namespace Fasetto.Word
         /// The size of the resize border around the window, taking into account the outer margin
         /// </summary>
         public Thickness ResizeBorderThickness => new Thickness(ResizeBorder + OuterMarginSize);
+
+        /// <summary>
+        /// The padding of the inner content of the main window
+        /// </summary>
+        public Thickness InnerContentPadding => new Thickness(ResizeBorder);
 
         /// <summary>
         /// The margin around the window to allow for a drop shadow
