@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29519.181
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Fasetto.Word", "Fasetto.Word\Fasetto.Word.csproj", "{C2496ECD-A627-4A85-8B5E-83B20EA2E2BB}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C2496ECD-A627-4A85-8B5E-83B20EA2E2BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C2496ECD-A627-4A85-8B5E-83B20EA2E2BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C2496ECD-A627-4A85-8B5E-83B20EA2E2BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C2496ECD-A627-4A85-8B5E-83B20EA2E2BB}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3847D11C-44E1-4592-B335-52201B76F5E6}
+	EndGlobalSection
+EndGlobal
