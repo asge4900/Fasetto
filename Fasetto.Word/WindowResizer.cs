@@ -11,6 +11,7 @@ namespace Fasetto.Word
 {
      public class WindowResizer
     {
+        //Test
         //#region Private Members
 
         ///// <summary>
