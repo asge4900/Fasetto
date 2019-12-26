@@ -6,26 +6,43 @@
       xmlns:local="clr-namespace:Fasetto.Word"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="LoginPage">
+      Title="LoginPage">   
 
     <Border Background="{StaticResource WordBlueBrush}">
         <Grid>
-            
+            <!--Blue background image-->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Background/emoji-background.png" />
+            </Grid.Background>
+
             <!--Main content scroll-->
             <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto">
                 <StackPanel VerticalAlignment="Center" HorizontalAlignment="Center" TextBlock.TextAlignment="Center">
-                    
+
                     <!--Login main content white box-->
-                    <Border Background="{StaticResource ForegroundLightBrush}" CornerRadius="10" Padding="15 50 15 15" Width="400" Margin="50 50 50 0">
+                    <Border Background="{StaticResource ForegroundLightBrush}" CornerRadius="10" Padding="15 50 15 15" Width="330" Margin="50 50 50 0">
                         <StackPanel>
-                            
+
                             <!--Sign Up header-->
                             <TextBlock Text="Sign Up" FontSize="{StaticResource FontSizeLarge}" FontFamily="{StaticResource LatoRegular}" Foreground="{StaticResource WordBlueBrush}" />
-                            
+
                             <!--Sign Up subtext-->
-                            <TextBlock Text="It's about to get fun" FontSize="{StaticResource FontSizeRegular}" Foreground="{StaticResource ForegroundDarkBrush}" />
+                            <TextBlock Text="It's about to get fun" FontSize="{StaticResource FontSizeRegular}" Foreground="{StaticResource ForegroundDarkBrush}" Margin="0 0 0 20" />
+
+                            <!--Email-->
+                            <TextBox Tag="Email" />
+
+                            <!--Password-->
+                            <TextBox Tag="Password" Margin="0 0 0 30" />
+
+                            <!--Next botton-->
+                            <Button Content="Next" HorizontalAlignment="Center" />
                         </StackPanel>
+
                     </Border>
+
+                    <Button Style="{StaticResource TextButton}" Content="I already have an account" HorizontalAlignment="Center"/>
+
                 </StackPanel>
             </ScrollViewer>
         </Grid>
