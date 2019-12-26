@@ -32,6 +32,11 @@ namespace Fasetto.Word
         /// </summary>
         private int windowRadius = 10;
 
+        /// <summary>
+        /// The last known dock position
+        /// </summary>
+        private WindowDockPosition dockPosition = WindowDockPosition.Undocked;
+
         #endregion        
 
         #region Constructor
@@ -58,7 +63,10 @@ namespace Fasetto.Word
             MinimizeCommand = new RelayCommand(() => this.window.WindowState = WindowState.Minimized);
             MaximizeCommand = new RelayCommand(() => this.window.WindowState ^= WindowState.Maximized);
             CloseCommand = new RelayCommand(() => this.window.Close());
-            MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(this.window, GetMousePosition()));            
+            MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(this.window, GetMousePosition()));
+
+            //Fix window resize issue
+            //var resizer = new WindowResizer(this.window);
         }
 
         #endregion
@@ -103,9 +111,14 @@ namespace Fasetto.Word
         public double WindowMinimumHeight { get; set; } = 400;
 
         /// <summary>
+        /// True if the window should be borderless because it is docked or maximized
+        /// </summary>
+        public bool Borderless => window.WindowState == WindowState.Maximized || dockPosition != WindowDockPosition.Undocked;
+
+        /// <summary>
         /// The size of the resize border around the window
         /// </summary>
-        public int ResizeBorder { get; set; } = 6;
+        public int ResizeBorder => Borderless ? 0 : 6;
 
         /// <summary>
         /// The size of the resize border around the window, taking into account the outer margin
@@ -115,7 +128,7 @@ namespace Fasetto.Word
         /// <summary>
         /// The padding of the inner content of the main window
         /// </summary>
-        public Thickness InnerContentPadding => new Thickness(ResizeBorder);
+        public Thickness InnerContentPadding { get; set; } = new Thickness(0);
 
         /// <summary>
         /// The margin around the window to allow for a drop shadow
@@ -168,6 +181,11 @@ namespace Fasetto.Word
         /// The height of the title bar / caption of the window
         /// </summary>
         public GridLength TitleHeightGridLength => new GridLength(TitleHeight + ResizeBorder);
+
+        /// <summary>
+        /// The current page of the application
+        /// </summary>
+        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Login;
 
         #endregion
 
