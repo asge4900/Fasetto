@@ -137,7 +137,8 @@ namespace Fasetto.Word
         { 
             get
             { 
-                return window.WindowState == WindowState.Maximized ? 0 : outerMarginSize; 
+                //If it is maximized or docked, no border
+                return Borderless ? 0 : outerMarginSize; 
             
             } 
             set 
