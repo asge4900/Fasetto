@@ -107,10 +107,29 @@
     </Window.Resources>
 
     <WindowChrome.WindowChrome>
-        <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness}" CaptionHeight="{Binding TitleHeight}" GlassFrameThickness="0" CornerRadius="0" />
+        <WindowChrome ResizeBorderThickness="{Binding ResizeBorderThickness}" 
+                      CaptionHeight="{Binding TitleHeight}" 
+                      GlassFrameThickness="0" 
+                      CornerRadius="0" />
     </WindowChrome.WindowChrome>
 
-    <Grid Background="{StaticResource ForegroundLightBrush}">
-        <Frame x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}" />
-    </Grid>
+    <Border Background="{StaticResource WordBlueBrush}">
+        <Grid>
+
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="300" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+            
+            <!-- Blue background image -->
+            <Grid.Background>
+                <ImageBrush TileMode="Tile" ViewportUnits="Absolute" Viewport="0 0 500 500" ImageSource="/Images/Backgrounds/emoji-background.png" />
+            </Grid.Background>
+
+            <Frame Grid.Column="1" x:Name="MainFrame" Content="{Binding CurrentPage, Converter={local:ApplicationPageValueConverter}}" Background="Transparent" />
+            
+            <!--Side Menu-->
+            <local:SideMenuControl></local:SideMenuControl>
+        </Grid>
+    </Border>
 </Window>
