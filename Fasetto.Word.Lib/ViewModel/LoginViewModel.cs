@@ -1,26 +1,23 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
 using System.Security;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace Fasetto.Word
+namespace Fasetto.Word.Lib
 {
     /// <summary>
     /// The View Model for a login screen
     /// </summary>
     public class LoginViewModel : BaseViewModel
-    {
-        #region Fields
-
-
-
-        #endregion
+    {    
 
         #region Constructor
 
         public LoginViewModel()
         {
+            //Create commands
             LoginCommand = new RelayParameterizedCommand(async (parameter) => await Login(parameter));
+            RegisterCommand = new RelayCommand(async () => await Register());
         }
 
         #endregion
@@ -46,6 +43,11 @@ namespace Fasetto.Word
         /// </summary>
         public ICommand LoginCommand { get; set; }
 
+        /// <summary>
+        /// The command to register for a new account
+        /// </summary>
+        public ICommand RegisterCommand { get; set; }
+
         #endregion
 
         /// <summary>
@@ -64,6 +66,18 @@ namespace Fasetto.Word
                 // IMPORTANT: Never store unsecure password in variable like this
                 var pass = (parameter as IHavePassword).SecurePassword.Unsecure();
             });
+        }
+
+        /// <summary>
+        /// Takes the user to the register page
+        /// </summary>        
+        /// <returns></returns>
+        public async Task Register()
+        {
+            //TODO: Go to register page?
+            //((WindowViewModel)((MainWindow)Application.Current.MainWindow).DataContext).CurrentPage = ApplicationPage.Register;
+
+            await Task.Delay(1);
         }
     }
 }

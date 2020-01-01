@@ -1,4 +1,5 @@
-﻿using GalaSoft.MvvmLight.Command;
+﻿using Fasetto.Word.Lib;
+using GalaSoft.MvvmLight.Command;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Input;
@@ -176,12 +177,7 @@ namespace Fasetto.Word
         /// <summary>
         /// The height of the title bar / caption of the window
         /// </summary>
-        public GridLength TitleHeightGridLength => new GridLength(TitleHeight + ResizeBorder);
-
-        /// <summary>
-        /// The current page of the application
-        /// </summary>
-        public ApplicationPage CurrentPage { get; set; } = ApplicationPage.Chat;
+        public GridLength TitleHeightGridLength => new GridLength(TitleHeight + ResizeBorder);       
 
         #endregion
 

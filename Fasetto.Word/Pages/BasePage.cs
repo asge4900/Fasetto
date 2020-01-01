@@ -1,6 +1,7 @@
 ﻿using System.Windows.Controls;
 using System.Windows;
 using System.Threading.Tasks;
+using Fasetto.Word.Lib;
 
 namespace Fasetto.Word
 {
@@ -88,7 +89,7 @@ namespace Fasetto.Word
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private async void BasePage_Loaded(object sender, System.Windows.RoutedEventArgs e)
+        private async void BasePage_Loaded(object sender, RoutedEventArgs e)
         {
             //Animate the page in
             await AnimateIn();

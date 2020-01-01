@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fasetto.Word.Lib;
+using System;
 using System.Security;
 
 namespace Fasetto.Word

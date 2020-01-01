@@ -23,6 +23,7 @@
     <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource BaseStyle}" />
 
     <System:Double x:Key="FontSizeSmall">14</System:Double>
+    <System:Double x:Key="FontSizeAverage">18</System:Double>
     <System:Double x:Key="FontSizeRegular">20</System:Double>
     <System:Double x:Key="FontSizeLarge">30</System:Double>
 

@@ -2,7 +2,7 @@
 using System.Linq.Expressions;
 using System.Reflection;
 
-namespace Fasetto.Word
+namespace Fasetto.Word.Lib
 {
     /// <summary>
     /// A helper for expressions

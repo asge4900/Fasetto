@@ -1,17 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Fasetto.Word.Lib;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 
 namespace Fasetto.Word
 {
@@ -20,6 +8,8 @@ namespace Fasetto.Word
     /// </summary>
     public partial class MainWindow : Window
     {
+        public ApplicationViewModel applicationViewModel => new ApplicationViewModel();
+
         public MainWindow()
         {
             InitializeComponent();

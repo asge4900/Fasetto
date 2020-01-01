@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Fasetto.Word.Lib;
+using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Globalization;
@@ -20,6 +21,9 @@ namespace Fasetto.Word
             {
                 case ApplicationPage.Login:
                     return new LoginPage();
+
+                case ApplicationPage.Register:
+                    return new RegisterPage();
 
                 case ApplicationPage.Chat:
                     return new ChatPage();
