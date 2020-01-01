@@ -7,9 +7,7 @@ namespace Fasetto.Word
     /// Interaction logic for MainWindow.xaml
     /// </summary>
     public partial class MainWindow : Window
-    {
-        public ApplicationViewModel applicationViewModel => new ApplicationViewModel();
-
+    { 
         public MainWindow()
         {
             InitializeComponent();
