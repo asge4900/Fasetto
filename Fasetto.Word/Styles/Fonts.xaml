@@ -10,10 +10,12 @@
 
     <Style TargetType="{x:Type Control}" x:Key="BaseStyle">
         <Setter Property="FontFamily" Value="{StaticResource LatoThin}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
     </Style>
 
     <Style TargetType="{x:Type TextBlock}" x:Key="BaseTextBlockStyle">
         <Setter Property="FontFamily" Value="{StaticResource LatoThin}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeRegular}" />
     </Style>
 
     <Style TargetType="{x:Type Button}" BasedOn="{StaticResource BaseStyle}" />
@@ -22,10 +24,12 @@
     <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlockStyle}" />
     <Style TargetType="{x:Type ListView}" BasedOn="{StaticResource BaseStyle}" />
 
-    <System:Double x:Key="FontSizeSmall">14</System:Double>
-    <System:Double x:Key="FontSizeAverage">18</System:Double>
-    <System:Double x:Key="FontSizeRegular">20</System:Double>
-    <System:Double x:Key="FontSizeLarge">30</System:Double>
+    <System:Double x:Key="FontSizeSmaller">10</System:Double>
+    <System:Double x:Key="FontSizeSmall">12</System:Double>
+    <System:Double x:Key="FontSizeRegular">14</System:Double>
+    <System:Double x:Key="FontSizeLarge">20</System:Double>
+    <System:Double x:Key="FontSizeXLarge">24</System:Double>
+    <System:Double x:Key="FontSizeXXLarge">30</System:Double>
 
     <System:String x:Key="FontAwesomeChatIcon">&#xf086;</System:String>
     <System:String x:Key="FontAwesomeUserIcon">&#xf007;</System:String>

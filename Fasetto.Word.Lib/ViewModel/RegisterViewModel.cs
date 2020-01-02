@@ -8,16 +8,16 @@ namespace Fasetto.Word.Lib
     /// <summary>
     /// The View Model for a login screen
     /// </summary>
-    public class LoginViewModel : BaseViewModel
+    public class RegisterViewModel : BaseViewModel
     {    
 
         #region Constructor
 
-        public LoginViewModel()
+        public RegisterViewModel()
         {
             //Create commands
-            LoginCommand = new RelayParameterizedCommand(async (parameter) => await Login(parameter));
-            RegisterCommand = new RelayCommand(async () => await Register());
+            RegisterCommand = new RelayParameterizedCommand(async (parameter) => await Register(parameter));
+            LoginCommand = new RelayCommand(async () => await Login());
         }
 
         #endregion
@@ -30,9 +30,9 @@ namespace Fasetto.Word.Lib
         public string Email { get; set; }
 
         /// <summary>
-        /// A flag indicating if the login command is running
+        /// A flag indicating if the register command is running
         /// </summary>
-        public bool LoginIsRunning { get; set; }
+        public bool RegisterIsRunning { get; set; }
 
         #endregion
 
@@ -51,34 +51,26 @@ namespace Fasetto.Word.Lib
         #endregion
 
         /// <summary>
-        /// Attempts to log the user in
+        /// Attempts to register a new user
         /// </summary>
         /// <param name="parameter">The <see cref="SecureString"/>passed in from the view for the users password</param>
         /// <returns></returns>
-        public async Task Login(object parameter)
+        public async Task Register(object parameter)
         {
-            await RunCommand(() => LoginIsRunning, async () =>
+            await RunCommand(() => this.RegisterIsRunning, async () =>
             {
-                await Task.Delay(1000);
-
-                //Go to chat page
-                IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Chat);
-
-                //var email = this.Email;
-
-                //// IMPORTANT: Never store unsecure password in variable like this
-                //var pass = (parameter as IHavePassword).SecurePassword.Unsecure();
+                await Task.Delay(5000);                
             });
         }
 
         /// <summary>
-        /// Takes the user to the register page
+        /// Takes the user to the login page
         /// </summary>        
         /// <returns></returns>
-        public async Task Register()
+        public async Task Login()
         {
             //Go to register page
-            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Register);
+            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Login);
 
             await Task.Delay(1);
         }

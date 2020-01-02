@@ -10,7 +10,7 @@
     </Style>
 
     <Style TargetType="{x:Type TextBox}" BasedOn="{StaticResource BaseStyle}">
-        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeXXLarge}" />
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="0 5 0 5" />
@@ -61,7 +61,7 @@
 
     <Style TargetType="{x:Type PasswordBox}" BasedOn="{StaticResource BaseStyle}">
         
-        <Setter Property="FontSize" Value="{StaticResource FontSizeLarge}" />
+        <Setter Property="FontSize" Value="{StaticResource FontSizeXXLarge}" />
         <Setter Property="FontFamily" Value="{StaticResource LatoRegular}" />
         <Setter Property="Padding" Value="10" />
         <Setter Property="Margin" Value="0 5 0 5" />
@@ -85,7 +85,8 @@
                         <TextBlock IsHitTestVisible="False" 
                                    Text="{TemplateBinding Tag}" 
                                    x:Name="placeholder" 
-                                   FontFamily="{StaticResource LatoThin}" 
+                                   FontFamily="{StaticResource LatoThin}"
+                                   FontSize="{TemplateBinding FontSize}"
                                    Padding="{TemplateBinding Padding}"
                                    Visibility="{TemplateBinding local:HasTextProperty.Value, Converter={local:BooleanToVisibilityConverter}}"
                                    VerticalAlignment="Center" 

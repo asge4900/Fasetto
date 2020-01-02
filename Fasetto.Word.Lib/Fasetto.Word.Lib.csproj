@@ -66,8 +66,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataModels\ApplicationPage.cs" />
+    <Compile Include="Data\AppDbContext.cs" />
     <Compile Include="Expressions\ExpressionHelpers.cs" />
     <Compile Include="IoC\IoC.cs" />
+    <Compile Include="Models\ChatListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Security\SecureStringHelpers.cs" />
     <Compile Include="ViewModel\ApplicationViewModel.cs" />
@@ -79,6 +81,7 @@
     <Compile Include="ViewModel\Chat\Design\ChatListDesignModel.cs" />
     <Compile Include="ViewModel\Chat\Design\ChatListItemDesignModel.cs" />
     <Compile Include="ViewModel\Chat\Runtime\ChatListRuntimeModel.cs" />
+    <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>

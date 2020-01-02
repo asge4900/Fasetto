@@ -24,12 +24,12 @@ namespace Fasetto.Word.Lib
         /// </summary>
         public ChatListRuntimeModel()
         {            
-            Items = new List<ChatListItemViewModel>();
+            //Items = new List<ChatListItemViewModel>();
 
             //using (var db = new AppDbContext())
             //{
             //    foreach (var item in db.ChatListItems)
-            //    {                    
+            //    {
             //        var chatItem = new ChatListItemViewModel
             //        {
             //            Name = item.FirstName,
@@ -37,9 +37,9 @@ namespace Fasetto.Word.Lib
             //            Message = item.ChatMessage,
             //            ProfilePictureRGB = item.ProfilePictureRGB
             //        };
-                    
-            //        Items.Add(chatItem);
-            //    }            
+
+            //        Items.Add(chatItem);+
+            //    }
             //}
         }
         #endregion
