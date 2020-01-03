@@ -27,13 +27,17 @@
                             <TextBlock Text="It's about to get fun" FontSize="{StaticResource FontSizeLarge}" Foreground="{StaticResource ForegroundDarkBrush}" Margin="0 0 0 20" />
 
                             <!--Email-->
-                            <TextBox Text="{Binding Email}" Tag="Email" />
+                            <TextBox Text="{Binding Email}" 
+                                     Tag="Email" 
+                                     local:IsFocusedProperty.Value="True"
+                                     />
 
                             <!--Password-->
                             <PasswordBox x:Name="PasswordText" Tag="Password" Margin="0 0 0 30" />
 
                             <!--Next botton-->
                             <Button Content="Register"
+                                    IsDefault="True"
                                     local:IsBusyProperty.Value="{Binding RegisterIsRunning}"
                                     Command="{Binding RegisterCommand}" 
                                     CommandParameter="{Binding ElementName=Page}"
