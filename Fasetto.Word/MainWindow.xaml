@@ -137,7 +137,7 @@
             <!--Side Menu-->
             <local:SideMenuControl Width="300" 
                                    local:AnimateSlideInFromLeftProperty.Value="{Binding ApplicationViewModel.SideMenuVisible, Source={x:Static local:ViewModelLocator.Instance}}">
-                <local:ChatListControl DataContext="{x:Static lib:ChatListDesignModel.Instance}"/>
+                <local:ChatListControl />
             </local:SideMenuControl>
         </Grid>
     </Border>

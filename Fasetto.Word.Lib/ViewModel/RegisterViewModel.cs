@@ -16,8 +16,8 @@ namespace Fasetto.Word.Lib
         public RegisterViewModel()
         {
             //Create commands
-            RegisterCommand = new RelayParameterizedCommand(async (parameter) => await Register(parameter));
-            LoginCommand = new RelayCommand(async () => await Login());
+            RegisterCommand = new RelayParameterizedCommand(async (parameter) => await RegisterAsync(parameter));
+            LoginCommand = new RelayCommand(async () => await LoginAsync());
         }
 
         #endregion
@@ -55,9 +55,9 @@ namespace Fasetto.Word.Lib
         /// </summary>
         /// <param name="parameter">The <see cref="SecureString"/>passed in from the view for the users password</param>
         /// <returns></returns>
-        public async Task Register(object parameter)
+        public async Task RegisterAsync(object parameter)
         {
-            await RunCommand(() => this.RegisterIsRunning, async () =>
+            await RunCommandAsync(() => RegisterIsRunning, async () =>
             {
                 await Task.Delay(5000);                
             });
@@ -67,7 +67,7 @@ namespace Fasetto.Word.Lib
         /// Takes the user to the login page
         /// </summary>        
         /// <returns></returns>
-        public async Task Login()
+        public async Task LoginAsync()
         {
             //Go to register page
             IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Login);
