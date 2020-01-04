@@ -12,7 +12,7 @@
         <ControlTemplate TargetType="UserControl">
             
             <!--Main background-->
-            <Border Background="{StaticResource ForegroundLightBrush}">
+            <Border>
 
                 <!--Content-->
                 <Grid>
@@ -23,7 +23,7 @@
                     </Grid.RowDefinitions>
 
                     <!--Top Menu-->
-                    <Grid Height="50" Background="{StaticResource WordBlueBrush}">
+                    <Grid Height="50">
 
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="Auto" />
@@ -33,18 +33,27 @@
 
                         <!--Main buttons-->
                         <StackPanel Orientation="Horizontal">
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChatIcon}" />
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeUserIcon}" />
-                            <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomePictureChatIcon}" />
+                            <Button Style="{StaticResource IconButton}" 
+                                    Content="{StaticResource FontAwesomeChatIcon}" />
+                            <Button Style="{StaticResource IconButton}" 
+                                    Content="{StaticResource FontAwesomeUserIcon}" />
+                            <Button Style="{StaticResource IconButton}" 
+                                    Content="{StaticResource FontAwesomePictureChatIcon}" />
                         </StackPanel>
 
                         <!--Setting button-->
-                        <Button Grid.Column="2" Foreground="{StaticResource WordDarkBlueBrush}" Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeCogIcon}" />
+                        <Button Grid.Column="2" 
+                                Foreground="{StaticResource WordDarkBlueBrush}" 
+                                Style="{StaticResource IconButton}"
+                                Content="{StaticResource FontAwesomeCogIcon}" />
 
                     </Grid>
                     
                     <!--The user content-->
-                    <ContentPresenter Grid.Row="1" />
+                    <Border Background="{StaticResource ForegroundLightBrush}"
+                            Grid.Row="1" >
+                        <ContentPresenter/>
+                    </Border>
 
                 </Grid>
 

@@ -45,7 +45,10 @@
 
             <!-- Main buttons -->
             <StackPanel Orientation="Horizontal" Grid.Column="1">
-                <Button Style="{StaticResource IconButton}" Content="{StaticResource FontAwesomeChatIcon}" />                
+                <Button Style="{StaticResource IconButton}" 
+                        Content="{StaticResource FontAwesomeSearchIcon}" />
+                <Button Style="{StaticResource IconButton}" 
+                        Content="{StaticResource FontAwesomeEllipsisVerticalIcon}" />                
             </StackPanel>
 
         </Grid>
