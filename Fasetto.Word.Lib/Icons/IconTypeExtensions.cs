@@ -16,7 +16,7 @@
             switch (type)
             {
                 case IconType.File:
-                    return "\uf0f6";
+                    return "\uf15c";
 
                 case IconType.Picture:
                     return "\uf1c5";
