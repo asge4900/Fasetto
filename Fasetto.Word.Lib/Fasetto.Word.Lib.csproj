@@ -66,8 +66,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataModels\ApplicationPage.cs" />
+    <Compile Include="DataModels\ElementHorizontalAlignment.cs" />
+    <Compile Include="DataModels\IconType.cs" />
+    <Compile Include="DataModels\MenuItemType.cs" />
     <Compile Include="Data\AppDbContext.cs" />
     <Compile Include="Expressions\ExpressionHelpers.cs" />
+    <Compile Include="Icons\IconTypeExtensions.cs" />
     <Compile Include="IoC\IoC.cs" />
     <Compile Include="Models\ChatListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,12 +89,20 @@
     <Compile Include="ViewModel\Chat\ChatList\Design\ChatListDesignModel.cs" />
     <Compile Include="ViewModel\Chat\ChatList\Design\ChatListItemDesignModel.cs" />
     <Compile Include="ViewModel\Chat\ChatList\Runtime\ChatListRuntimeModel.cs" />
+    <Compile Include="ViewModel\Menu\Design\MenuDesignModel.cs" />
+    <Compile Include="ViewModel\Menu\Design\MenuItemDesignModel.cs" />
+    <Compile Include="ViewModel\Menu\MenuItemViewModel.cs" />
+    <Compile Include="ViewModel\Menu\MenuViewModel.cs" />
+    <Compile Include="ViewModel\PopupMenu\BasePopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupMenu\ChatAttachmentPopupMenuViewModel.cs" />
+    <Compile Include="ViewModel\PopupMenu\Design\ChatAttachmentPopupMenuDesignModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\Fody.6.0.5\build\Fody.targets" Condition="Exists('..\packages\Fody.6.0.5\build\Fody.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">

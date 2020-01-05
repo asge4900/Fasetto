@@ -129,18 +129,12 @@ namespace Fasetto.Word
         /// <summary>
         /// The margin around the window to allow for a drop shadow
         /// </summary>
-        public int OuterMarginSize 
-        { 
-            get
-            { 
-                //If it is maximized or docked, no border
-                return Borderless ? 0 : outerMarginSize; 
-            
-            } 
-            set 
-            { 
-                outerMarginSize = value; 
-            } 
+        public int OuterMarginSize
+        {
+            //If it is maximized or docked, no border
+            get => Borderless ? 0 : outerMarginSize;
+
+            set => outerMarginSize = value;
         }
 
         /// <summary>
@@ -153,15 +147,9 @@ namespace Fasetto.Word
         /// </summary>
         public int WindowRadius
         {
-            get
-            {
-                return window.WindowState == WindowState.Maximized ? 0 : windowRadius;
+            get => window.WindowState == WindowState.Maximized ? 0 : windowRadius;
 
-            }
-            set
-            {
-                windowRadius = value;
-            }
+            set => windowRadius = value;
         }
 
         /// <summary>
