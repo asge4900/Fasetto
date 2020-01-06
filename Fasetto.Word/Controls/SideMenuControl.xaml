@@ -43,7 +43,8 @@
 
                         <!--Setting button-->
                         <Button Grid.Column="2" 
-                                Foreground="{StaticResource WordDarkBlueBrush}" 
+                                Foreground="{StaticResource WordDarkBlueBrush}"
+                                Command="{Binding SettingsViewModel.OpenCommand, Source={x:Static local:ViewModelLocator.Instance}}"
                                 Style="{StaticResource IconButton}"
                                 Content="{StaticResource FontAwesomeCogIcon}" />
 

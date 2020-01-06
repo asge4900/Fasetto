@@ -39,6 +39,7 @@
     <System:String x:Key="FontAwesomeEllipsisVerticalIcon">&#xf142;</System:String>
     <System:String x:Key="FontAwesomePaperclipIcon">&#xf0c6;</System:String>
     <System:String x:Key="FontAwesomeSmileIcon">&#xf118;</System:String>
+    <System:String x:Key="FontAwesomeArrowLeftIcon">&#xf060;</System:String>
     
 
 </ResourceDictionary>

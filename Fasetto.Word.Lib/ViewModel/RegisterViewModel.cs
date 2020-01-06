@@ -70,7 +70,7 @@ namespace Fasetto.Word.Lib
         public async Task LoginAsync()
         {
             //Go to register page
-            IoC.Get<ApplicationViewModel>().GoToPage(ApplicationPage.Login);
+            IoC.Application.GoToPage(ApplicationPage.Login);
 
             await Task.Delay(1);
         }

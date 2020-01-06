@@ -102,6 +102,7 @@
     <Compile Include="ViewModel\PopupMenu\Design\ChatAttachmentPopupMenuDesignModel.cs" />
     <Compile Include="ViewModel\RegisterViewModel.cs" />
     <Compile Include="ViewModel\LoginViewModel.cs" />
+    <Compile Include="ViewModel\SettingsViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

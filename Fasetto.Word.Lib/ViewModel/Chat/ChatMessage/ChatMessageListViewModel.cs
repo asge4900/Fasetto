@@ -95,7 +95,7 @@ namespace Fasetto.Word.Lib
         /// When the user clicks the send button, send the message
         /// </summary>
         public void Send()
-        {
+        {  
             IoC.UI.ShowMessage(new MessageBoxDialogViewModel
             {
                 Title = "Send Message",
