@@ -47,7 +47,7 @@
 
             <!-- Main Content -->
             <Grid Grid.Row="1"
-                  Width="700"
+                  Width="600"
                   VerticalAlignment="Top">
 
                 <Grid.ColumnDefinitions>
@@ -56,7 +56,7 @@
                 </Grid.ColumnDefinitions>
                 
                 <!--Profile picture-->
-                <Grid Margin="0 0 10 0"
+                <Grid Margin="0 0 30 0"
                       Height="{Binding ActualWidth, RelativeSource={RelativeSource Self}}">
 
                     <!--Mask for rounded corners-->
