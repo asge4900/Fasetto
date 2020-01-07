@@ -190,6 +190,7 @@
     <Compile Include="AttachedProperties\ButtonAttachedProperty.cs" />
     <Compile Include="AttachedProperties\FrameworkElementAnimationAttachedProperties.cs" />
     <Compile Include="AttachedProperties\PasswordBoxAttachedProperties.cs" />
+    <Compile Include="AttachedProperties\TextEntryWidthMatcherProperty.cs" />
     <Compile Include="Controls\BubbleContent.xaml.cs">
       <DependentUpon>BubbleContent.xaml</DependentUpon>
     </Compile>
