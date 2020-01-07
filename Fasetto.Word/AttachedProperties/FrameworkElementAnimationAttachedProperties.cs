@@ -32,6 +32,13 @@ namespace Fasetto.Word
             // On first load...
             if (FirstLoad)
             {
+                //Start off hidden before we decide to animate
+                //if we are to be animated out initially
+                if (!(bool)value)
+                {
+                    element.Visibility = Visibility.Hidden;
+                }
+
                 // Create a single self-unhookable event 
                 // for the elements Loaded event
                 RoutedEventHandler onLoaded = null;
@@ -129,6 +136,18 @@ namespace Fasetto.Word
             else
                 // Animate out
                 await element.FadeOutAsync(FirstLoad ? 0 : 0.3f);
+        }
+    }
+
+    /// <summary>
+    /// Animates a framework element sliding it from right to left and repeating forever
+    /// </summary>
+    public class AnimateMarqueeProperty : AnimateBaseProperty<AnimateMarqueeProperty>
+    {
+        protected override void DoAnimation(FrameworkElement element, bool value)
+        {
+            // Animate in
+            element.MarqueeAsync(FirstLoad ? 0 : 3f);
         }
     }
 }
