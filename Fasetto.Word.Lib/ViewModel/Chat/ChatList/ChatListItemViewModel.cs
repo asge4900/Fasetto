@@ -1,8 +1,10 @@
-﻿using System;
+﻿using GalaSoft.MvvmLight.Command;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace Fasetto.Word.Lib
 {
@@ -11,6 +13,21 @@ namespace Fasetto.Word.Lib
     /// </summary>
     public class ChatListItemViewModel : BaseViewModel
     {
+        #region Constructor
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        public ChatListItemViewModel()
+        {
+            //Create commands
+            OpenMessageCommand = new RelayCommand(OpenMessage);
+        }
+
+        #endregion
+
+        #region Properperties
+
         /// <summary>
         /// The display name of this chat list
         /// </summary>
@@ -24,7 +41,7 @@ namespace Fasetto.Word.Lib
         /// <summary>
         /// The latest message from this chat
         /// </summary>
-        public string Message { get; set; }        
+        public string Message { get; set; }
 
         /// <summary>
         /// The RGB values (in hex) for the background color of the profile picture
@@ -41,5 +58,84 @@ namespace Fasetto.Word.Lib
         /// True if this item is currently selected
         /// </summary>
         public bool IsSelected { get; set; }
+
+        #endregion
+
+        #region Public Commands
+
+        /// <summary>
+        /// Opens the current message thread
+        /// </summary>
+        public ICommand OpenMessageCommand { get; set; }
+
+        #endregion
+
+        #region Command methods
+
+        private void OpenMessage()
+        {
+            IoC.Application.GoToPage(ApplicationPage.Chat, new ChatMessageListViewModel
+            {
+                Items = new List<ChatMessageListItemViewModel>
+                {
+                    new ChatMessageListItemViewModel
+                    {
+                        Message = Message,
+                        Initials = Initials,
+                        MessageSentTime = DateTime.UtcNow,
+                        ProfilePictureRGB = "FF00FF",
+                        SenderName = "Luke",
+                        SendByMe = true
+                    },
+                    new ChatMessageListItemViewModel
+                    {
+                        Message = "A recevied message",
+                        Initials = Initials,
+                        MessageSentTime = DateTime.UtcNow,
+                        ProfilePictureRGB = "FF0000",
+                        SenderName = "Parenel",
+                        SendByMe = false
+                    },
+                     new ChatMessageListItemViewModel
+                    {
+                        Message = "A recevied message",
+                        Initials = Initials,
+                        MessageSentTime = DateTime.UtcNow,
+                        ProfilePictureRGB = "FF0000",
+                        SenderName = "Parenel",
+                        SendByMe = false
+                    },
+                     new ChatMessageListItemViewModel
+                    {
+                        Message = Message,
+                        Initials = Initials,
+                        MessageSentTime = DateTime.UtcNow,
+                        ProfilePictureRGB = "FF00FF",
+                        SenderName = "Luke",
+                        SendByMe = true
+                    },
+                    new ChatMessageListItemViewModel
+                    {
+                        Message = "A recevied message",
+                        Initials = Initials,
+                        MessageSentTime = DateTime.UtcNow,
+                        ProfilePictureRGB = "FF0000",
+                        SenderName = "Parenel",
+                        SendByMe = false
+                    },
+                     new ChatMessageListItemViewModel
+                    {
+                        Message = "A recevied message",
+                        Initials = Initials,
+                        MessageSentTime = DateTime.UtcNow,
+                        ProfilePictureRGB = "FF0000",
+                        SenderName = "Parenel",
+                        SendByMe = false
+                    }
+                }
+            });
+        }
+
+        #endregion
     }
 }
