@@ -79,7 +79,8 @@
                 </Grid>
                 
                 <!--Profile details-->
-                <StackPanel Grid.Column="1">
+                <StackPanel Grid.Column="1"
+                            local:TextEntryWidthMatcherProperty.Value="True">
 
                     <local:TextEntryControl DataContext="{Binding Name}" />
                     <local:TextEntryControl DataContext="{Binding Username}" />

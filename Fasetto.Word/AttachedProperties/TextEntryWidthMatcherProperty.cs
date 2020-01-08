@@ -34,12 +34,12 @@ namespace Fasetto.Word
                     if (!(child is TextEntryControl control))
                         continue;
 
-                    //// Set it's margin to the given value
-                    //control.Label.SizeChanged += (ss, eee) =>
-                    //{
-                    //    // Update widths
-                    //    SetWidths(panel);
-                    //};
+                    // Set it's margin to the given value
+                    control.Label.SizeChanged += (ss, eee) =>
+                    {
+                        // Update widths
+                        SetWidths(panel);
+                    };
                 }
             };
 
@@ -63,8 +63,8 @@ namespace Fasetto.Word
                 if (!(child is TextEntryControl control))
                     continue;
 
-                //// Find if this value is larger than the other controls
-                //maxSize = Math.Max(maxSize, control.Label.RenderSize.Width + control.Label.Margin.Left + control.Label.Margin.Right);
+                // Find if this value is larger than the other controls
+                maxSize = Math.Max(maxSize, control.Label.RenderSize.Width + control.Label.Margin.Left + control.Label.Margin.Right);
             }
 
             // Create a grid length converter
