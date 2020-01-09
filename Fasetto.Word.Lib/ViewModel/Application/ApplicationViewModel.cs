@@ -22,7 +22,7 @@ namespace Fasetto.Word.Lib
         ///       It is simply used to set the view model of the current page
         ///       at the time it changes
         /// </summary>
-        public BaseViewModel CurrentPageViewModel { get; set; } = new ChatListViewModel();
+        public BaseViewModel CurrentPageViewModel { get; set; }
 
         /// <summary>
         /// True if the side menu should be shown

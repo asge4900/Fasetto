@@ -106,6 +106,10 @@ namespace Fasetto.Word
                     // Setup this controls data context binding to the view model
                     DataContext = viewModel;
 
+                    //Show in the center of the parent
+                    dialogWindow.Owner = Application.Current.MainWindow;
+                    dialogWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+
                     // Show dialog
                     dialogWindow.ShowDialog();
                 }

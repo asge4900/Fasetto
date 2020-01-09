@@ -7,11 +7,12 @@
              xmlns:lib="clr-namespace:Fasetto.Word.Lib;assembly=Fasetto.Word.Lib"
              mc:Ignorable="d" 
              d:DesignHeight="600" d:DesignWidth="300">
-
-    <Grid DataContext="{x:Static lib:ChatMessageListDesignModel.Instance}"
+  
+    <Grid d:DataContext="{x:Static lib:ChatMessageListDesignModel.Instance}"
           VerticalAlignment="Bottom"
           >
-        <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <ScrollViewer VerticalScrollBarVisibility="Auto"
+                      local:ScrollToBottomOnLoadProperty.Value="True">
             <ItemsControl ItemsSource="{Binding Items}">
                 <ItemsControl.ItemTemplate>
                     <DataTemplate>

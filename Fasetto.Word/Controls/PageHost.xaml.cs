@@ -1,5 +1,6 @@
 ﻿using Fasetto.Word.Lib;
 using System;
+using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -54,6 +55,9 @@ namespace Fasetto.Word
         public PageHost()
         {
             InitializeComponent();
+
+            if (DesignerProperties.GetIsInDesignMode(this))
+                NewPage.Content = IoC.Application.CurrentPage.ToBasePage();
         }
 
         #endregion
@@ -68,12 +72,22 @@ namespace Fasetto.Word
         private static object CurrentPagePropertyChanged(DependencyObject d, object value)
         {
             //Get current values
-            var currentPage = d.GetValue(CurrentPageProperty);
+            var currentPage = (ApplicationPage)d.GetValue(CurrentPageProperty);
             var currentPageViewModel = d.GetValue(CurrentPageViewModelProperty);
 
             //Get the frames
             var newPageFrame = (d as PageHost).NewPage;
             var oldPageFrame = (d as PageHost).OldPage;
+
+            //If the current page hasn't changed
+            //just update the view model
+            if (newPageFrame.Content is BasePage page && page.ToApplicationPage() == currentPage)
+            {
+                //Just update the view model
+                page.ViewModelObject = currentPageViewModel;
+
+                return value;
+            }
 
             //Store the current page as the old page
             var oldPageContent = newPageFrame.Content;
@@ -100,7 +114,7 @@ namespace Fasetto.Word
             }
 
             //Set the new page content
-            newPageFrame.Content = currentPage;
+            newPageFrame.Content = currentPage.ToBasePage(currentPageViewModel);
 
             return value;
         }

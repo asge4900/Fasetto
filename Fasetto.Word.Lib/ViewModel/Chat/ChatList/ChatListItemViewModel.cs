@@ -75,7 +75,7 @@ namespace Fasetto.Word.Lib
         private void OpenMessage()
         {
             IoC.Application.GoToPage(ApplicationPage.Chat, new ChatMessageListViewModel
-            {
+            {                
                 Items = new List<ChatMessageListItemViewModel>
                 {
                     new ChatMessageListItemViewModel
