@@ -52,5 +52,11 @@ namespace Fasetto.Word.Lib
         /// The time the message was sent
         /// </summary>
         public DateTimeOffset MessageSentTime { get; set; }
+
+        /// <summary>
+        /// A flag indicating if this item was added since the first main list items was created
+        /// Used as a flag for animating in
+        /// </summary>
+        public bool NewItem { get; set; }
     }
 }

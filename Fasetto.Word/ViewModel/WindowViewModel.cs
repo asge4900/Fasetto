@@ -62,7 +62,7 @@ namespace Fasetto.Word
             MenuCommand = new RelayCommand(() => SystemCommands.ShowSystemMenu(this.window, GetMousePosition()));
 
             //Fix window resize issue
-            //var resizer = new WindowResizer(this.window);
+            var resizer = new WindowResizer(this.window);
         }
 
         #endregion
