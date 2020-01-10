@@ -118,6 +118,10 @@ namespace Fasetto.Word.Lib
                 SenderName = "Luke Malpass",
                 NewItem = true
             });
+
+
+            // Clear the pending message text
+            PendingMessageText = string.Empty;
         }
 
         #endregion
