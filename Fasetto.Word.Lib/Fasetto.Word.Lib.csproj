@@ -82,6 +82,7 @@
     <Compile Include="ViewModel\Base\BaseViewModel.cs" />
     <Compile Include="ViewModel\Base\IHavePassword.cs" />
     <Compile Include="ViewModel\Base\RelayParameterizedCommand.cs" />
+    <Compile Include="ViewModel\Chat\ChatMessage\ChatMessageListItemImageAttachmentViewModel.cs" />
     <Compile Include="ViewModel\Chat\ChatMessage\Design\ChatMessageListDesignModel.cs" />
     <Compile Include="ViewModel\Chat\ChatMessage\Design\ChatMessageListItemDesignModel.cs" />
     <Compile Include="ViewModel\Chat\ChatMessage\ChatMessageListItemViewModel.cs" />

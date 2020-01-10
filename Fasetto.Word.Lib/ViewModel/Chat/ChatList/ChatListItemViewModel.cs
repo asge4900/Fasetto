@@ -127,6 +127,10 @@ namespace Fasetto.Word.Lib
                      new ChatMessageListItemViewModel
                     {
                         Message = "A recevied message",
+                        ImageAttachment = new ChatMessageListItemImageAttachmentViewModel
+                        {
+                            ThumbnailUrl = "http://anywhere"
+                        },
                         Initials = Initials,
                         MessageSentTime = DateTime.UtcNow,
                         ProfilePictureRGB = "FF0000",

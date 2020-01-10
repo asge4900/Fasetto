@@ -184,6 +184,7 @@
     <Compile Include="Animation\PageAnimationHelper.cs" />
     <Compile Include="Animation\StoryboardHelpers.cs" />
     <Compile Include="AttachedProperties\BaseAttachedProperty.cs" />
+    <Compile Include="AttachedProperties\BorderAttachedProperties.cs" />
     <Compile Include="AttachedProperties\PanelChildMarginProperty.cs" />
     <Compile Include="AttachedProperties\ScrollViewerAttachedProperties.cs" />
     <Compile Include="AttachedProperties\TextAttachedProperties.cs" />
@@ -245,6 +246,7 @@
     </Compile>
     <Compile Include="ValueConverters\ApplicationPageHelpers.cs" />
     <Compile Include="ValueConverters\BooleanInvertConverter.cs" />
+    <Compile Include="ValueConverters\BooleanToVisiblityGoneConverter.cs" />
     <Compile Include="ValueConverters\HorizontalAlignmentConverter.cs" />
     <Compile Include="ValueConverters\IconTypeToFontAwesomeConverter.cs" />
     <Compile Include="ValueConverters\MenuItemTypeVisiblityConverter.cs" />
