@@ -77,11 +77,11 @@
                     <Border HorizontalAlignment="{Binding SendByMe, Converter={local:SentByMeToAlignmentConverter}}"
                             VerticalAlignment="Top">
                         <TextBlock Style="{StaticResource SpinningText}"   
-                               Foreground="{StaticResource ForegroundLightBrush}"
-                               Padding="20"
-                               DataContext="{Binding ImageAttachment}"
-                               Visibility="{Binding ImageLoaded, Converter={local:BooleanToVisiblityGoneConverter}, ConverterParameter=True, FallbackValue=Collapsed}"
-                               />
+                                   Foreground="{StaticResource ForegroundLightBrush}"
+                                   Padding="20"
+                                   DataContext="{Binding ImageAttachment}"
+                                   Visibility="{Binding ImageLoaded, Converter={local:BooleanToVisiblityGoneConverter}, ConverterParameter=True, FallbackValue=Collapsed}"
+                                   />
                     </Border>
 
                     <!-- Image attachment -->
@@ -103,6 +103,7 @@
                           Visibility="{Binding HasMessage, Converter={local:BooleanToVisiblityGoneConverter}}">
 
                         <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                             <RowDefinition Height="Auto" />
                         </Grid.RowDefinitions>
@@ -130,33 +131,34 @@
                               HorizontalAlignment="{Binding SendByMe, Converter={local:SentByMeToAlignmentConverter}}"
                               Fill="{Binding SendByMe, Converter={local:SentByMeToBackgroundConverter}}"
                               />
-                    </Grid>
-                    
-                </Grid>
 
-                <!--Time containers-->
-                <StackPanel x:Name="ExtraDetails" 
+                        <!--Time containers-->
+                        <StackPanel x:Name="ExtraDetails" 
                             Grid.Row="2"
                             Opacity="0"
                             Orientation="Horizontal"
                             HorizontalAlignment="{Binding SendByMe, Converter={local:SentByMeToAlignmentConverter}, ConverterParameter=True}"
                             >
-                    
-                    <!--Sent time-->
-                    <TextBlock Text="{Binding MessageSentTime, Converter={local:TimeToDisplayTimeConverter}}"
+
+                            <!--Sent time-->
+                            <TextBlock Text="{Binding MessageSentTime, Converter={local:TimeToDisplayTimeConverter}}"
                                Foreground="{StaticResource ForegroundLightBrush}"
                                FontSize="{StaticResource FontSizeSmall}"
                                FontFamily="{StaticResource LatoRegular}"
                                Margin="0 0 15 0"
                            />
 
-                    <!--Read time-->
-                    <TextBlock Text="{Binding MessageReadTime, Converter={local:TimeToReadTimeConverter}}"
+                            <!--Read time-->
+                            <TextBlock Text="{Binding MessageReadTime, Converter={local:TimeToReadTimeConverter}}"
                                Foreground="{StaticResource WordDarkBlueBrush}"
                                FontSize="{StaticResource FontSizeSmall}"
                                FontFamily="{StaticResource LatoRegular}"
                            />
-                </StackPanel>
+                        </StackPanel>
+                    </Grid>
+                    
+                </Grid>
+                
             </Grid>
         </Grid>
             
