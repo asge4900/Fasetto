@@ -1,5 +1,4 @@
-﻿using GalaSoft.MvvmLight.Command;
-using System.Security;
+﻿using System.Security;
 using System.Windows.Input;
 
 namespace Fasetto.Word.Lib

@@ -1,5 +1,4 @@
 ﻿using Fasetto.Word.Lib;
-using GalaSoft.MvvmLight.Command;
 using System.Runtime.InteropServices;
 using System.Windows;
 using System.Windows.Input;

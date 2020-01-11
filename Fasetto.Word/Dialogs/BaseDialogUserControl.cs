@@ -1,5 +1,4 @@
 ﻿using Fasetto.Word.Lib;
-using GalaSoft.MvvmLight.Command;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
