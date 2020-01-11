@@ -1,6 +1,9 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Data;
 
 namespace Fasetto.Word
 {
@@ -18,12 +21,12 @@ namespace Fasetto.Word
         /// True if this is the very first time the value has been updated
         /// Used to make sure we run the logic at least once during first load
         /// </summary>
-        protected Dictionary<DependencyObject, bool> mAlreadyLoaded = new Dictionary<DependencyObject, bool>();
+        protected Dictionary<DependencyObject, bool> alreadyLoaded = new Dictionary<DependencyObject, bool>();
 
         /// <summary>
         /// The most recent value used if we get a value changed before we do the first load
         /// </summary>
-        protected Dictionary<DependencyObject, bool> mFirstLoadValue = new Dictionary<DependencyObject, bool>();
+        protected Dictionary<DependencyObject, bool> firstLoadValue = new Dictionary<DependencyObject, bool>();
 
         #endregion
 
@@ -34,14 +37,14 @@ namespace Fasetto.Word
                 return;
 
             // Don't fire if the value doesn't change
-            if ((bool)sender.GetValue(ValueProperty) == (bool)value && mAlreadyLoaded.ContainsKey(sender))
+            if ((bool)sender.GetValue(ValueProperty) == (bool)value && alreadyLoaded.ContainsKey(sender))
                 return;
 
             // On first load...
-            if (!mAlreadyLoaded.ContainsKey(sender))
+            if (!alreadyLoaded.ContainsKey(sender))
             {
                 // Flag that we are in first load but have not finished it
-                mAlreadyLoaded[sender] = false;
+                alreadyLoaded[sender] = false;
 
                 // Start off hidden before we decide how to animate
                 element.Visibility = Visibility.Hidden;
@@ -59,18 +62,18 @@ namespace Fasetto.Word
                     await Task.Delay(5);
 
                     // Do desired animation
-                    DoAnimation(element, mFirstLoadValue.ContainsKey(sender) ? mFirstLoadValue[sender] : (bool)value, true);
+                    DoAnimation(element, firstLoadValue.ContainsKey(sender) ? firstLoadValue[sender] : (bool)value, true);
 
                     // Flag that we have finished first load
-                    mAlreadyLoaded[sender] = true;
+                    alreadyLoaded[sender] = true;
                 };
 
                 // Hook into the Loaded event of the element
                 element.Loaded += onLoaded;
             }
             // If we have started a first load but not fired the animation yet, update the property
-            else if (mAlreadyLoaded[sender] == false)
-                mFirstLoadValue[sender] = (bool)value;
+            else if (alreadyLoaded[sender] == false)
+                firstLoadValue[sender] = (bool)value;
             else
                 // Do desired animation
                 DoAnimation(element, (bool)value, false);
@@ -82,6 +85,37 @@ namespace Fasetto.Word
         /// <param name="element">The element</param>
         /// <param name="value">The new value</param>
         protected virtual void DoAnimation(FrameworkElement element, bool value, bool firstLoad) { }
+    }
+
+    /// <summary>
+    /// Fades in an image once the sourcee changes
+    /// </summary>
+    public class FadeInImageOnLoadProperty : AnimateBaseProperty<FadeInImageOnLoadProperty>
+    {
+        public override void OnValueUpdated(DependencyObject sender, object value)
+        {
+            // Make sure we have an image
+            if (!(sender is Image image))
+            {
+                return;
+            }
+
+            //If we want to animate in..
+            if ((bool)value)
+            {
+                image.TargetUpdated += Image_TargetUpdatedAsync;
+            }
+            else
+            {
+                image.TargetUpdated -= Image_TargetUpdatedAsync;
+            }
+        }
+
+        private async void Image_TargetUpdatedAsync(object sender, DataTransferEventArgs e)
+        {
+            // Fade in image
+            await (sender as Image).FadeInAsync(false);
+        }
     }
 
     /// <summary>
