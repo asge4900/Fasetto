@@ -25,12 +25,35 @@ namespace Fasetto.Word.Lib
 
         #endregion
 
+        #region Constructor
+
+        /// <summary>
+        /// Default constructor
+        /// </summary>
+        /// <param name="loggers">The loggers to add to the factory, on top of the stock loggers already included</param>
+        public BaseLogFactory(ILogger[] loggers = null)
+        {
+            // Add console logger
+            AddLogger(new DebugLogger());
+
+            // Add any others passed in
+            if (loggers != null)
+            {
+                foreach (var logger in loggers)
+                {
+                    AddLogger(logger);
+                }
+            }
+        }
+
+        #endregion
+
         #region Properties
 
         /// <summary>
         /// The level of logging to output
         /// </summary>
-        public LogFactoryLevel LogOutputLevel { get; set; }
+        public LogOutputLevel LogOutputLevel { get; set; }
 
         /// <summary>
         /// If true includes the origin of where the log message was logged from
@@ -45,9 +68,11 @@ namespace Fasetto.Word.Lib
         /// <summary>
         /// Fires whenever a new log arrives
         /// </summary>
-        public event Action<(string Message, LogFactoryLevel Level)> NewLog = (details) => { };
+        public event Action<(string Message, LogLevel Level)> NewLog = (details) => { };
 
         #endregion
+
+        #region Public Methods
 
         /// <summary>
         /// Adds the specific logger to this factory
@@ -62,7 +87,7 @@ namespace Fasetto.Word.Lib
                 if (!loggers.Contains(logger))
                 {
                     // Add the logger to the list
-                    loggers.Add(logger); 
+                    loggers.Add(logger);
                 }
             }
         }
@@ -95,15 +120,21 @@ namespace Fasetto.Word.Lib
         /// <param name="lineNumber">The line code in the filename this message was logged from</param>
         public void Log(
             string message,
-            LogFactoryLevel level = LogFactoryLevel.Informative,
+            LogLevel level = LogLevel.Informative,
             [CallerMemberName] string origin = "",
             [CallerFilePath] string filePath = "",
             [CallerLineNumber] int lineNumber = 0)
         {
+            // If we should not log the message as the level is too low...
+            if ((int)level < (int)LogOutputLevel)
+            {
+                return;
+            }
+
             // If the user wants to know where the log originated from...
             if (IncludeLogOriginDetails)
             {
-                message = $"[{Path.GetFileName(filePath)} > {origin}() > line {lineNumber}]{Environment.NewLine}{message}";
+                message = $"{message} [{Path.GetFileName(filePath)} > {origin}() > Line {lineNumber}]";
             }
 
             // Log to all loggers
@@ -111,6 +142,8 @@ namespace Fasetto.Word.Lib
 
             // Inform listeners
             NewLog.Invoke((message, level));
-        }
+        } 
+
+        #endregion
     }
 }

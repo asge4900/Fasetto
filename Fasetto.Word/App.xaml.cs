@@ -26,6 +26,14 @@ namespace Fasetto.Word
             //Setup the main application
             ApplicationSetup();
 
+            // Log it
+            IoC.Logger.Log("Application starting...", LogLevel.Debug);
+
+            //IoC.Task.Run(() =>
+            //{
+            //    throw new ArgumentException("Oops");
+            //});
+            
             //Show the main window
             Current.MainWindow = new MainWindow();
             Current.MainWindow.Show();
@@ -36,11 +44,26 @@ namespace Fasetto.Word
         /// </summary>
         private void ApplicationSetup()
         {
-            //Setup IoC
+            // Setup IoC
             IoC.Setup();
 
-            //Bind a UI Manager
+            // Bind a logger
+            IoC.Kernel.Bind<ILogFactory>().ToConstant(new BaseLogFactory(new[] 
+            { 
+                // TODO: Add ApplicationSettings so we can set/edit a log location
+                //       For now just log to the path where this application is running
+                new FileLogger("log.txt") 
+            }));
+
+            // Add our task manager
+            IoC.Kernel.Bind<ITaskManager>().ToConstant(new TaskManager());
+
+            // Bind a file manager
+            IoC.Kernel.Bind<IFileManager>().ToConstant(new FileManager());
+
+            // Bind a UI Manager
             IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
+
         }
     }
 }

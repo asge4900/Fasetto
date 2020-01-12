@@ -17,12 +17,27 @@ namespace Fasetto.Word.Lib
         /// <summary>
         /// A shortcut to access the <see cref="IUIManager"/>
         /// </summary>
-        public static IUIManager UI => IoC.Get<IUIManager>();
+        public static IUIManager UI => Get<IUIManager>();
+
+        /// <summary>
+        /// A shortcut to access the <see cref="ILogFactory"/>
+        /// </summary>
+        public static ILogFactory Logger => Get<ILogFactory>();
+
+        /// <summary>
+        /// A shortcut to access the <see cref="IFileManager"/>
+        /// </summary>
+        public static IFileManager File => Get<IFileManager>();
+
+        /// <summary>
+        /// A shortcut to access the <see cref="ITaskManager"/>
+        /// </summary>
+        public static ITaskManager Task => Get<ITaskManager>();
 
         /// <summary>
         /// A shortcut to access the <see cref="ApplicationViewModel"/>
         /// </summary>
-        public static ApplicationViewModel Application => IoC.Get<ApplicationViewModel>();
+        public static ApplicationViewModel Application => Get<ApplicationViewModel>();
 
         /// <summary>
         /// A shortcut to access the <see cref="SettingsViewModel"/>

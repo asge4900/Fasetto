@@ -1,14 +1,14 @@
 ﻿namespace Fasetto.Word.Lib
 {
     /// <summary>
-    /// The severity of the log message
+    /// The level of details to output for a logger
     /// </summary>
-    public enum LogFactoryLevel
+    public enum LogOutputLevel
     {
         /// <summary>
         /// Logs everything
         /// </summary>
-        Debug,
+        Debug = 1,
 
         /// <summary>
         /// Logs all information except, debug information
@@ -21,18 +21,13 @@
         Informative,
 
         /// <summary>
-        /// Logs only warnings, errors and standard messages
-        /// </summary>
-        Normal,
-
-        /// <summary>
-        /// Log only critical errors and warnings, no general information
+        /// Log only critical errors and warnings and success, but no general information
         /// </summary>
         Critical,
 
         /// <summary>
         /// The logger will never output anything
         /// </summary>
-        Nothing
+        Nothing = 7
     }
 }
