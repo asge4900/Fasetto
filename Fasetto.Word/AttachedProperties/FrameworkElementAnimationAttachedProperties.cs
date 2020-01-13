@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -21,12 +22,12 @@ namespace Fasetto.Word
         /// True if this is the very first time the value has been updated
         /// Used to make sure we run the logic at least once during first load
         /// </summary>
-        protected Dictionary<DependencyObject, bool> alreadyLoaded = new Dictionary<DependencyObject, bool>();
+        protected Dictionary<WeakReference, bool> alreadyLoaded = new Dictionary<WeakReference, bool>();
 
         /// <summary>
         /// The most recent value used if we get a value changed before we do the first load
         /// </summary>
-        protected Dictionary<DependencyObject, bool> firstLoadValue = new Dictionary<DependencyObject, bool>();
+        protected Dictionary<WeakReference, bool> firstLoadValue = new Dictionary<WeakReference, bool>();
 
         #endregion
 
@@ -36,15 +37,24 @@ namespace Fasetto.Word
             if (!(sender is FrameworkElement element))
                 return;
 
+            // Try and get the already loaded reference
+            var alreadyLoadedReference = alreadyLoaded.FirstOrDefault(f => f.Key.Target == sender);
+
+            // Try and get the first load reference
+            var firstLoadReference = firstLoadValue.FirstOrDefault(f => f.Key.Target == sender);
+
             // Don't fire if the value doesn't change
-            if ((bool)sender.GetValue(ValueProperty) == (bool)value && alreadyLoaded.ContainsKey(sender))
+            if ((bool)sender.GetValue(ValueProperty) == (bool)value && alreadyLoadedReference.Key != null)
                 return;
 
             // On first load...
-            if (!alreadyLoaded.ContainsKey(sender))
+            if (alreadyLoadedReference.Key == null)
             {
+                // Create weak reference
+                var weakReference = new WeakReference(sender);
+
                 // Flag that we are in first load but have not finished it
-                alreadyLoaded[sender] = false;
+                alreadyLoaded[weakReference] = false;
 
                 // Start off hidden before we decide how to animate
                 element.Visibility = Visibility.Hidden;
@@ -61,19 +71,23 @@ namespace Fasetto.Word
                     // and their width/heights correctly calculated
                     await Task.Delay(5);
 
+                    // Refresh the first load value in case it changed
+                    // since the 5ms delay
+                    firstLoadReference = firstLoadValue.FirstOrDefault(f => f.Key.Target == sender);
+
                     // Do desired animation
-                    DoAnimation(element, firstLoadValue.ContainsKey(sender) ? firstLoadValue[sender] : (bool)value, true);
+                    DoAnimation(element, firstLoadReference.Key != null ? firstLoadReference.Value : (bool)value, true);
 
                     // Flag that we have finished first load
-                    alreadyLoaded[sender] = true;
+                    alreadyLoaded[weakReference] = true;
                 };
 
                 // Hook into the Loaded event of the element
                 element.Loaded += onLoaded;
             }
             // If we have started a first load but not fired the animation yet, update the property
-            else if (alreadyLoaded[sender] == false)
-                firstLoadValue[sender] = (bool)value;
+            else if (alreadyLoadedReference.Value== false)
+                firstLoadValue[new WeakReference(sender)] = (bool)value;
             else
                 // Do desired animation
                 DoAnimation(element, (bool)value, false);

@@ -1,4 +1,5 @@
 ﻿using System;
+using Dna;
 using System.Security;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -59,25 +60,64 @@ namespace Fasetto.Word.Lib
         {
             await RunCommandAsync(() => LoginIsRunning, async () =>
             {
-                //TODO: Fake a login...
-                await Task.Delay(1000);
+                // Call the server and attempt to login with credentials
+                // TODO: Move all URLS and API routes to static class
+                var result = await WebRequests.PostAsync<ApiResponse<LoginResultApiModel>>(
+                    "http://localhost:58727/api/login",
+                    new LoginCredentialsApiModel
+                    {                        
+                        UsernameOrEmail = Email,
+                        Password = (parameter as IHavePassword).SecurePassword.Unsecure()
+                    });
 
-                //Ok successfully loggen in... now get users data
-                //TODO: Ask server for users info
+                // If there was no response, bad data, or a response with a error message...
+                if (result == null || result.ServerResponse == null || !result.ServerResponse.Successful)
+                {
+                    // Default error message
+                    // TODO: Localize strings
+                    var message = "Unkown error from server call";
 
-                //TODO: Remove this with real information pulled from our database in future
-                IoC.Settings.Name = new TextEntryViewModel { Label = "Name", OriginalText = $"Luke Malpass {DateTime.Now.ToLocalTime()}" };
-                IoC.Settings.Username = new TextEntryViewModel { Label = "Username", OriginalText = "luke" };
+                    // If we got a response from the server...
+                    if (result?.ServerResponse != null)
+                    {
+                        // Set message to servers response
+                        message = result.ServerResponse.ErrorMessage;
+                    }
+                    // If we have a result but deserialize failed...
+                    else if (!string.IsNullOrWhiteSpace(result?.RawServerResponse))
+                    {
+                        // Set error message
+                        message = $"Unexpected reponse from server. {result.RawServerResponse}";
+                    }
+                    // If we have a result but no server response details at all...
+                    else if (result != null)
+                    {
+                        //Set message to standard HTTP server response details
+                        message = $"Failed to communicate with server. Status code {result.StatusCode}. {result.StatusDescription}";
+                    }
+
+                    // Display error
+                    await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
+                    {
+                        //TODO: Localize strings
+                        Title = "login failed",
+                        Message = message
+                    });
+
+                    // We are done 
+                    return;
+                }
+
+                // OK successfully logged in... now get users data
+                var userData = result.ServerResponse.Response;
+
+                IoC.Settings.Name = new TextEntryViewModel { Label = "Name", OriginalText = $"{userData.FirstName} {userData.LastName}" };
+                IoC.Settings.Username = new TextEntryViewModel { Label = "Username", OriginalText = userData.Username };
                 IoC.Settings.Password = new PasswordEntryViewModel { Label = "Password", FakePassword = "********" };
-                IoC.Settings.Email = new TextEntryViewModel { Label = "Email", OriginalText = "contact@angelsix.com" };
+                IoC.Settings.Email = new TextEntryViewModel { Label = "Email", OriginalText = userData.Email };
 
                 //Go to chat page
                 IoC.Application.GoToPage(ApplicationPage.Chat);
-
-                //var email = this.Email;
-
-                //// IMPORTANT: Never store unsecure password in variable like this
-                //var pass = (parameter as IHavePassword).SecurePassword.Unsecure();
             });
         }
 
