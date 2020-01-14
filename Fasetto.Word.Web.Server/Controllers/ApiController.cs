@@ -117,12 +117,12 @@ namespace Fasetto.Word.Web.Server
                 {
                     Response = new RegisterResultApiModel
                     {
-                        Id = user.Id,
-                        FirstName = user.FirstName,
-                        LastName = user.LastName,
-                        Email = user.Email,
-                        Username = user.UserName,
-                        Token = user.GenerateJwtToken()
+                        Id = userIdentity.Id,
+                        FirstName = userIdentity.FirstName,
+                        LastName = userIdentity.LastName,
+                        Email = userIdentity.Email,
+                        Username = userIdentity.UserName,
+                        Token = userIdentity.GenerateJwtToken()
                     }
                 };
             }
