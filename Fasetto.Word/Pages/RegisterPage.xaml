@@ -26,10 +26,15 @@
                             <!--Sign Up subtext-->
                             <TextBlock Text="It's about to get fun" FontSize="{StaticResource FontSizeLarge}" Foreground="{StaticResource ForegroundDarkBrush}" Margin="0 0 0 20" />
 
+                            <!--Username-->
+                            <TextBox Text="{Binding Username}" 
+                                     Tag="Username" 
+                                     local:IsFocusedProperty.Value="True"
+                                     />
+
                             <!--Email-->
                             <TextBox Text="{Binding Email}" 
-                                     Tag="Email" 
-                                     local:IsFocusedProperty.Value="True"
+                                     Tag="Email"                                      
                                      />
 
                             <!--Password-->

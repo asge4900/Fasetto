@@ -1,30 +1,19 @@
 ﻿namespace Fasetto.Word.Lib
 {
     /// <summary>
-    /// The result of a successful login request via API
+    /// The data model for the login credentials of a client
     /// </summary>
-    public class LoginResultApiModel
+    public class LoginCredentialsDataModel
     {
-        #region Constructor
-
         /// <summary>
-        /// Default constructor
+        /// The unique Id
         /// </summary>
-        public LoginResultApiModel()
-        {
-
-        }
-
-        #endregion
-
-        #region Public Properties
-
         public string Id { get; set; }
 
         /// <summary>
-        /// The authentication token used to stay authenticated through future requests
+        /// The users username
         /// </summary>
-        public string Token { get; set; }
+        public string Username { get; set; }
 
         /// <summary>
         /// The users first name
@@ -37,15 +26,13 @@
         public string LastName { get; set; }
 
         /// <summary>
-        /// The users username
-        /// </summary>
-        public string Username { get; set; }
-
-        /// <summary>
         /// The users email
         /// </summary>
         public string Email { get; set; }
 
-        #endregion        
+        /// <summary>
+        /// The users login token
+        /// </summary>
+        public string Token { get; set; }
     }
 }

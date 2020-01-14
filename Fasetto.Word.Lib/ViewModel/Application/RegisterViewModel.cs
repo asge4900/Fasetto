@@ -1,4 +1,5 @@
-﻿using System.Security;
+﻿using Dna;
+using System.Security;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
@@ -21,7 +22,12 @@ namespace Fasetto.Word.Lib
 
         #endregion
 
-        #region Properties    
+        #region Properties
+
+        /// <summary>
+        /// The username of the user
+        /// </summary>
+        public string Username { get; set; }
 
         /// <summary>
         /// The email of the user
@@ -56,10 +62,28 @@ namespace Fasetto.Word.Lib
         /// <returns></returns>
         public async Task RegisterAsync(object parameter)
         {
-            await RunCommandAsync(() => RegisterIsRunning, async () =>
-            {
-                await Task.Delay(5000);                
-            });
+            // Call the server and attempt to register with the provided credentials
+            // TODO: Move all URLS and API routes to static class
+            var result = await WebRequests.PostAsync<ApiResponse<RegisterResultApiModel>>(
+                "http://localhost:58727/api/register",
+                new RegisterCredentialsApiModel
+                {
+                    Username = Username,
+                    Email = Email,
+                    Password = (parameter as IHavePassword).SecurePassword.Unsecure()
+                });
+
+            // If the reposne has an error...
+            if (await result.DisplayErrorIfFailedAsync("Register failed"))
+                //We are done
+                return;
+
+            // OK successfully registered (and logged in)... now get users data
+            var loginResult = result.ServerResponse.Response;
+
+            // Let the application view model handle what happens
+            // With the successful login
+            await IoC.Application.HandleSuccessfulLoginAsync(loginResult);
         }
 
         /// <summary>

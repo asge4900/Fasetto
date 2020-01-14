@@ -70,54 +70,17 @@ namespace Fasetto.Word.Lib
                         Password = (parameter as IHavePassword).SecurePassword.Unsecure()
                     });
 
-                // If there was no response, bad data, or a response with a error message...
-                if (result == null || result.ServerResponse == null || !result.ServerResponse.Successful)
-                {
-                    // Default error message
-                    // TODO: Localize strings
-                    var message = "Unkown error from server call";
-
-                    // If we got a response from the server...
-                    if (result?.ServerResponse != null)
-                    {
-                        // Set message to servers response
-                        message = result.ServerResponse.ErrorMessage;
-                    }
-                    // If we have a result but deserialize failed...
-                    else if (!string.IsNullOrWhiteSpace(result?.RawServerResponse))
-                    {
-                        // Set error message
-                        message = $"Unexpected reponse from server. {result.RawServerResponse}";
-                    }
-                    // If we have a result but no server response details at all...
-                    else if (result != null)
-                    {
-                        //Set message to standard HTTP server response details
-                        message = $"Failed to communicate with server. Status code {result.StatusCode}. {result.StatusDescription}";
-                    }
-
-                    // Display error
-                    await IoC.UI.ShowMessage(new MessageBoxDialogViewModel
-                    {
-                        //TODO: Localize strings
-                        Title = "login failed",
-                        Message = message
-                    });
-
-                    // We are done 
+                // If the reposne has an error...
+                if (await result.DisplayErrorIfFailedAsync("Login failed"))
+                    //We are done
                     return;
-                }
 
                 // OK successfully logged in... now get users data
-                var userData = result.ServerResponse.Response;
+                var loginResult = result.ServerResponse.Response;
 
-                IoC.Settings.Name = new TextEntryViewModel { Label = "Name", OriginalText = $"{userData.FirstName} {userData.LastName}" };
-                IoC.Settings.Username = new TextEntryViewModel { Label = "Username", OriginalText = userData.Username };
-                IoC.Settings.Password = new PasswordEntryViewModel { Label = "Password", FakePassword = "********" };
-                IoC.Settings.Email = new TextEntryViewModel { Label = "Email", OriginalText = userData.Email };
-
-                //Go to chat page
-                IoC.Application.GoToPage(ApplicationPage.Chat);
+                // Let the application view model handle what happens
+                // With the successful login
+                await IoC.Application.HandleSuccessfulLoginAsync(loginResult);
             });
         }
 

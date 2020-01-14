@@ -56,5 +56,29 @@ namespace Fasetto.Word.Lib
             //Show side menu or not?
             SideMenuVisible = page == ApplicationPage.Chat;
         }
+
+        /// <summary>
+        /// Handles what happen when we have successfully logged in
+        /// </summary>
+        /// <param name="loginResult">The results from the succesful login</param>
+        public async Task HandleSuccessfulLoginAsync(LoginResultApiModel loginResult)
+        {
+            // Store this in the client data store
+            await IoC.ClientDataStore.SaveLoginCredentialsAsync(new LoginCredentialsDataModel
+            {
+                Id = loginResult.Id,
+                Email = loginResult.Email,
+                FirstName = loginResult.FirstName,
+                LastName = loginResult.LastName,
+                Username = loginResult.Username,
+                Token = loginResult.Token
+            });
+
+            // Load new settings
+            await IoC.Settings.LoadAsync();
+
+            //Go to chat page
+            IoC.Application.GoToPage(ApplicationPage.Chat);
+        }
     }
 }

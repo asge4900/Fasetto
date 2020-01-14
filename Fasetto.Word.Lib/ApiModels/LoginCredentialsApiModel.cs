@@ -17,7 +17,7 @@
 
         #endregion
 
-        #region Public Properties
+        #region Public Properties        
 
         /// <summary>
         /// The users username or email
