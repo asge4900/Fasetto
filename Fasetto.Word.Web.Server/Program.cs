@@ -1,3 +1,6 @@
+using Dna;
+using Dna.AspNet;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 
@@ -7,14 +10,21 @@ namespace Fasetto.Word.Web.Server
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            CreateHostBuilder(args).Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+        public static IWebHost CreateHostBuilder(string[] args) =>
+            WebHost.CreateDefaultBuilder()
+            // Add Dna Framework
+            .UseDnaFramework(construct =>
+            {
+                // Configure framework
+
+                // Add file logger
+                construct.AddFileLogger();
+            })
+            .UseStartup<Startup>()
+            .Build();
+               
     }
 }

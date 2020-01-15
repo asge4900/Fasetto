@@ -3,6 +3,8 @@ using Fasetto.Word.Lib;
 using Fasetto.Word.Relational;
 using System.Threading.Tasks;
 using System.Windows;
+using static Fasetto.Word.DI;
+using static Dna.FrameworkDI;
 
 namespace Fasetto.Word
 {
@@ -23,18 +25,13 @@ namespace Fasetto.Word
             //Setup the main application
             await ApplicationSetupAsync();
 
-            // Log it
-            //IoC.Logger.Log("Application starting...", LogLevel.Debug);
-
-            //IoC.Task.Run(() =>
-            //{
-            //    throw new ArgumentException("Oops");
-            //});
+            //Log it
+            Logger.LogDebugSource("Application starting...");            
 
             // Setup the application view model based on if we are logged in
-            IoC.Application.GoToPage(
+            ViewModelApplication.GoToPage(
                 // If we are logged in...
-                await IoC.ClientDataStore.HasCredentialsAsync() ?
+                await ClientDataStore.HasCredentialsAsync() ?
                 // Go to chat page
                 ApplicationPage.Chat :
                 //Otherwise, go to login page
@@ -53,34 +50,16 @@ namespace Fasetto.Word
             // Setup the Dna Framework
             Framework.Construct<DefaultFrameworkConstruction>()
                 .AddFileLogger()
-                .AddClientDataStore()                
-                .Build();
-
-            // Setup IoC
-            IoC.Setup();
-
-            //// Bind a logger
-            //IoC.Kernel.Bind<ILogFactory>().ToConstant(new BaseLogFactory(new[] 
-            //{ 
-            //    // TODO: Add ApplicationSettings so we can set/edit a log location
-            //    //       For now just log to the path where this application is running
-            //    new FileLogger("log.txt") 
-            //}));
-
-            // Add our task manager
-            IoC.Kernel.Bind<ITaskManager>().ToConstant(new TaskManager());
-
-            // Bind a file manager
-            IoC.Kernel.Bind<IFileManager>().ToConstant(new FileManager());
-
-            // Bind a UI Manager
-            IoC.Kernel.Bind<IUIManager>().ToConstant(new UIManager());
+                .AddClientDataStore()
+                .AddFasettoWordViewModels()
+                .AddFasettoWordClientServices()
+                .Build();   
 
             //Ensure the client data store
-            await IoC.ClientDataStore.EnsureDataStoreAsync();
+            await ClientDataStore.EnsureDataStoreAsync();
 
             // Load new settings
-            await IoC.Settings.LoadAsync();
+            await ViewModelSettings.LoadAsync();
         }
     }
 }

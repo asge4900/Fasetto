@@ -1,0 +1,112 @@
+CRITICAL: [2020-01-15 09:04:17] We are alive [Startup.cs > Configure() > Line 108]
+INFORMATION: [2020-01-15 09:04:44] User profile is available. Using 'C:\Users\asge4900\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFORMATION: [2020-01-15 09:04:44] Request starting HTTP/1.1 GET http://localhost:58727/  
+INFORMATION: [2020-01-15 09:04:44] Executing endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-01-15 09:04:44] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Fasetto.Word.Web.Server.HomeController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-01-15 09:04:44] Executing action method Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server) - Validation state: Valid
+INFORMATION: [2020-01-15 09:04:45] Entity Framework Core 3.1.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-01-15 09:04:47] Executed DbCommand (41ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+INFORMATION: [2020-01-15 09:04:47] Executed DbCommand (129ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+INFORMATION: [2020-01-15 09:04:47] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFORMATION: [2020-01-15 09:04:47] Executed action method Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2700.2692ms.
+INFORMATION: [2020-01-15 09:04:47] Executing ViewResult, running view Index.
+INFORMATION: [2020-01-15 09:04:47] Executed ViewResult - view Index executed in 231.88ms.
+INFORMATION: [2020-01-15 09:04:47] Executed action Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server) in 3335.0141ms
+INFORMATION: [2020-01-15 09:04:47] Executed endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-01-15 09:04:47] Request starting HTTP/1.1 GET http://localhost:58727/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+INFORMATION: [2020-01-15 09:04:47] Request starting HTTP/1.1 GET http://localhost:58727/lib/bootstrap/dist/css/bootstrap.min.css  
+INFORMATION: [2020-01-15 09:04:48] Request finished in 3520.8805ms 200 text/html; charset=utf-8
+INFORMATION: [2020-01-15 09:04:48] Request starting HTTP/1.1 GET http://localhost:58727/lib/bootstrap/dist/js/bootstrap.bundle.min.js  
+INFORMATION: [2020-01-15 09:04:48] The file /js/site.js was not modified
+INFORMATION: [2020-01-15 09:04:48] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+INFORMATION: [2020-01-15 09:04:48] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+INFORMATION: [2020-01-15 09:04:48] Request finished in 113.2476ms 304 application/javascript
+INFORMATION: [2020-01-15 09:04:48] Request finished in 112.6736ms 304 text/css
+INFORMATION: [2020-01-15 09:04:48] Request starting HTTP/1.1 GET http://localhost:58727/css/site.css  
+INFORMATION: [2020-01-15 09:04:48] Request starting HTTP/1.1 GET http://localhost:58727/lib/jquery/dist/jquery.min.js  
+INFORMATION: [2020-01-15 09:04:48] Request finished in 122.7912ms 304 application/javascript
+INFORMATION: [2020-01-15 09:04:48] The file /css/site.css was not modified
+INFORMATION: [2020-01-15 09:04:48] The file /lib/jquery/dist/jquery.min.js was not modified
+INFORMATION: [2020-01-15 09:04:48] Request finished in 154.7625ms 304 text/css
+INFORMATION: [2020-01-15 09:04:48] Request finished in 187.2732ms 304 application/javascript
+INFORMATION: [2020-01-15 12:03:06] User profile is available. Using 'C:\Users\asge4900\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFORMATION: [2020-01-15 12:03:06] Request starting HTTP/1.1 GET http://localhost:58727/  
+INFORMATION: [2020-01-15 12:03:06] Executing endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-01-15 12:03:06] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Fasetto.Word.Web.Server.HomeController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-01-15 12:03:07] Entity Framework Core 3.1.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-01-15 12:03:09] Executed DbCommand (31ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+INFORMATION: [2020-01-15 12:03:09] Executed DbCommand (51ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+INFORMATION: [2020-01-15 12:03:09] Executed DbCommand (3ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFORMATION: [2020-01-15 12:03:09] Executing ViewResult, running view Index.
+INFORMATION: [2020-01-15 12:03:09] Executed ViewResult - view Index executed in 119.1427ms.
+INFORMATION: [2020-01-15 12:03:09] Executed action Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server) in 2884.8088ms
+INFORMATION: [2020-01-15 12:03:09] Executed endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-01-15 12:03:09] Request finished in 3047.7464ms 200 text/html; charset=utf-8
+INFORMATION: [2020-01-15 12:05:04] Request starting HTTP/1.1 POST http://localhost:58727/api/register application/json 104
+INFORMATION: [2020-01-15 12:05:04] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.RegisterAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-01-15 12:05:04] Route matched with {action = "Register", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.RegisterResultApiModel]] RegisterAsync(Fasetto.Word.Lib.RegisterCredentialsApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-01-15 12:05:04] Entity Framework Core 3.1.0 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-01-15 12:05:04] Executed DbCommand (46ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-01-15 12:05:04] Executed DbCommand (2ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-01-15 12:05:04] Executed DbCommand (4ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (DbType = Int32), @p2='?' (Size = 4000), @p3='?' (Size = 256), @p4='?' (DbType = Boolean), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (DbType = Boolean), @p8='?' (DbType = DateTimeOffset), @p9='?' (Size = 256), @p10='?' (Size = 256), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (DbType = Boolean), @p14='?' (Size = 4000), @p15='?' (DbType = Boolean), @p16='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [AspNetUsers] ([Id], [AccessFailedCount], [ConcurrencyStamp], [Email], [EmailConfirmed], [FirstName], [LastName], [LockoutEnabled], [LockoutEnd], [NormalizedEmail], [NormalizedUserName], [PasswordHash], [PhoneNumber], [PhoneNumberConfirmed], [SecurityStamp], [TwoFactorEnabled], [UserName])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13, @p14, @p15, @p16);
+INFORMATION: [2020-01-15 12:05:04] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-01-15 12:05:05] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.RegisterResultApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-01-15 12:05:05] Executed action Fasetto.Word.Web.Server.ApiController.RegisterAsync (Fasetto.Word.Web.Server) in 875.8157ms
+INFORMATION: [2020-01-15 12:05:05] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.RegisterAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-01-15 12:05:05] Request finished in 959.8991ms 200 application/json; charset=utf-8

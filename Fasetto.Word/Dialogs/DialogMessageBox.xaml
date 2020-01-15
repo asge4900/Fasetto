@@ -7,7 +7,7 @@
              xmlns:lib="clr-namespace:Fasetto.Word.Lib;assembly=Fasetto.Word.Lib"
              mc:Ignorable="d">
     
-    <StackPanel d:DataContext="{x:Static lib:MessageBoxDialogDesignModel.Instance}"
+    <StackPanel d:DataContext="{x:Static local:MessageBoxDialogDesignModel.Instance}"
                 Background="{StaticResource ForegroundLightBrush}"
                 >
         <TextBlock Text="{Binding Message}"

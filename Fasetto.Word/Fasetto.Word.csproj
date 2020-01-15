@@ -158,9 +158,6 @@
     <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Ninject, Version=3.3.4.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
-      <HintPath>..\packages\Ninject.3.3.4\lib\net45\Ninject.dll</HintPath>
-    </Reference>
     <Reference Include="PropertyChanged, Version=3.2.3.0, Culture=neutral, PublicKeyToken=ee3ee20bcf148ddd, processorArchitecture=MSIL">
       <HintPath>..\packages\PropertyChanged.Fody.3.2.3\lib\net40\PropertyChanged.dll</HintPath>
     </Reference>
@@ -298,7 +295,10 @@
     <Compile Include="DialogWindow.xaml.cs">
       <DependentUpon>DialogWindow.xaml</DependentUpon>
     </Compile>
-    <Compile Include="IoC\UIManager.cs" />
+    <Compile Include="DI\DI.cs" />
+    <Compile Include="DI\FrameworkConstructionExtensions.cs" />
+    <Compile Include="DI\UI\IUIManager.cs" />
+    <Compile Include="DI\UI\UIManager.cs" />
     <Compile Include="Pages\BasePage.cs" />
     <Compile Include="Pages\ChatPage.xaml.cs">
       <DependentUpon>ChatPage.xaml</DependentUpon>
@@ -324,9 +324,43 @@
     <Compile Include="ValueConverters\BaseValueConverter.cs" />
     <Compile Include="ValueConverters\StringRGBToBrushConverter.cs" />
     <Compile Include="ValueConverters\BooleanToVisibilityConverter.cs" />
-    <Compile Include="ViewModel\DialogWindowViewModel.cs" />
-    <Compile Include="ViewModel\ViewModelLocator.cs" />
-    <Compile Include="ViewModel\WindowViewModel.cs" />
+    <Compile Include="ViewModel\Application\ApplicationViewModel.cs" />
+    <Compile Include="ViewModel\Application\Design\SettingsDesignModel.cs" />
+    <Compile Include="ViewModel\Application\LoginViewModel.cs" />
+    <Compile Include="ViewModel\Application\RegisterViewModel.cs" />
+    <Compile Include="ViewModel\Application\SettingsViewModel.cs" />
+    <Compile Include="ViewModel\Base\BaseViewModel.cs" />
+    <Compile Include="ViewModel\Base\IHavePassword.cs" />
+    <Compile Include="ViewModel\Base\RelayCommand.cs" />
+    <Compile Include="ViewModel\Base\RelayParameterizedCommand.cs" />
+    <Compile Include="ViewModel\Chat\ChatList\ChatListItemViewModel.cs" />
+    <Compile Include="ViewModel\Chat\ChatList\ChatListViewModel.cs" />
+    <Compile Include="ViewModel\Chat\ChatList\Design\ChatListDesignModel.cs" />
+    <Compile Include="ViewModel\Chat\ChatList\Design\ChatListItemDesignModel.cs" />
+    <Compile Include="ViewModel\Chat\ChatList\Runtime\ChatListRuntimeModel.cs" />
+    <Compile Include="ViewModel\Chat\ChatMessage\ChatMessageListItemImageAttachmentViewModel.cs" />
+    <Compile Include="ViewModel\Chat\ChatMessage\ChatMessageListItemViewModel.cs" />
+    <Compile Include="ViewModel\Chat\ChatMessage\ChatMessageListViewModel.cs" />
+    <Compile Include="ViewModel\Chat\ChatMessage\Design\ChatMessageListDesignModel.cs" />
+    <Compile Include="ViewModel\Chat\ChatMessage\Design\ChatMessageListItemDesignModel.cs" />
+    <Compile Include="ViewModel\Dialogs\BaseDialogViewModel.cs" />
+    <Compile Include="ViewModel\Dialogs\Design\MessageBoxDialogDesignModel.cs" />
+    <Compile Include="ViewModel\Dialogs\MessageBoxDialogViewModel.cs" />
+    <Compile Include="ViewModel\Input\Design\PasswordEntryDesignModel.cs" />
+    <Compile Include="ViewModel\Input\Design\TextEntryDesignModel.cs" />
+    <Compile Include="ViewModel\Input\PasswordEntryViewModel.cs" />
+    <Compile Include="ViewModel\Input\TextEntryViewModel.cs" />
+    <Compile Include="ViewModel\Menu\Design\MenuDesignModel.cs" />
+    <Compile Include="ViewModel\Menu\Design\MenuItemDesignModel.cs" />
+    <Compile Include="ViewModel\Menu\MenuItemViewModel.cs" />
+    <Compile Include="ViewModel\Menu\MenuViewModel.cs" />
+    <Compile Include="ViewModel\PopupMenu\BasePopupViewModel.cs" />
+    <Compile Include="ViewModel\PopupMenu\ChatAttachmentPopupMenuViewModel.cs" />
+    <Compile Include="ViewModel\PopupMenu\Design\ChatAttachmentPopupMenuDesignModel.cs" />
+    <Compile Include="WebRequests\WebRequestResultExtensions.cs" />
+    <Compile Include="WPFViewModels\DialogWindowViewModel.cs" />
+    <Compile Include="WPFViewModels\ViewModelLocator.cs" />
+    <Compile Include="WPFViewModels\WindowViewModel.cs" />
     <Compile Include="Window\MINMAXINFO.cs" />
     <Compile Include="Window\MONITORINFO.cs" />
     <Compile Include="Window\MonitorOptions.cs" />

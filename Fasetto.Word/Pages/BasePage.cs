@@ -2,6 +2,7 @@
 using System.Windows;
 using System.Threading.Tasks;
 using Fasetto.Word.Lib;
+using Dna;
 
 namespace Fasetto.Word
 {
@@ -187,7 +188,7 @@ namespace Fasetto.Word
         public BasePage() : base()
         {          
             //Create a default view model
-            ViewModelObject = IoC.Get<VM>();
+            ViewModelObject = Framework.Service<VM>() ?? new VM();
         }
 
         /// <summary>
@@ -204,7 +205,7 @@ namespace Fasetto.Word
             else
             {
                 //Create a default view model
-                ViewModelObject = IoC.Get<VM>(); 
+                ViewModelObject = Framework.Service<VM>() ?? new VM(); 
             }
         }
 

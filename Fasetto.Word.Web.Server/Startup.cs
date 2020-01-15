@@ -1,5 +1,7 @@
 using System;
 using System.Text;
+using Dna;
+using Dna.AspNet;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Identity;
@@ -8,6 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.IdentityModel.Tokens;
+using static Dna.FrameworkDI;
 
 namespace Fasetto.Word.Web.Server
 {
@@ -15,7 +18,7 @@ namespace Fasetto.Word.Web.Server
     {
         public Startup(IConfiguration configuration)
         {
-            IoCContainer.Configuration = configuration;
+           
         }        
 
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -25,7 +28,7 @@ namespace Fasetto.Word.Web.Server
 
             // Add ApplicationDbContext to DI
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(IoCContainer.Configuration.GetConnectionString("DefaultConnection")));
+                options.UseSqlServer(Framework.Construction.Configuration.GetConnectionString("DefaultConnection")));
 
             // AddIdentity adds cookie based authentication
             // Adds scoped classes for things like UserManager, SignInManager, PasswordHashers etc..
@@ -59,14 +62,14 @@ namespace Fasetto.Word.Web.Server
                         ValidateIssuerSigningKey = true,
 
                         // Set issuer
-                        ValidIssuer = IoCContainer.Configuration["Jwt:Issuer"],
+                        ValidIssuer = Framework.Construction.Configuration["Jwt:Issuer"],
                         // Set audience
-                        ValidAudience = IoCContainer.Configuration["Jwt:Audience"],
+                        ValidAudience = Framework.Construction.Configuration["Jwt:Audience"],
 
                         // Set signing key
                         IssuerSigningKey = new SymmetricSecurityKey(
                             // Get our secret key from configuration
-                            Encoding.UTF8.GetBytes(IoCContainer.Configuration["Jwt:SecretKey"])),
+                            Encoding.UTF8.GetBytes(Framework.Construction.Configuration["Jwt:SecretKey"])),
                     };
                 });
 
@@ -99,8 +102,10 @@ namespace Fasetto.Word.Web.Server
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env, IServiceProvider serviceProvider)
         {
-            // Store instance of the DI service provider so our application can access it anywhere
-            IoCContainer.Provider = serviceProvider as ServiceProvider;
+            // Use Dna Framework
+            app.UseDnaFramework();
+
+            //Logger.LogCriticalSource("We are alive");
 
             // If in development...
             if (env.IsDevelopment())

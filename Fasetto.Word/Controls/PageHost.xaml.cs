@@ -1,9 +1,9 @@
 ﻿using Fasetto.Word.Lib;
-using System;
 using System.ComponentModel;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using static Fasetto.Word.DI;
 
 namespace Fasetto.Word
 {
@@ -57,7 +57,7 @@ namespace Fasetto.Word
             InitializeComponent();
 
             if (DesignerProperties.GetIsInDesignMode(this))
-                NewPage.Content = IoC.Application.CurrentPage.ToBasePage();
+                NewPage.Content = ViewModelApplication.CurrentPage.ToBasePage();
         }
 
         #endregion

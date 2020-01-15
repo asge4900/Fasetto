@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Fasetto.Word"
              xmlns:lib="clr-namespace:Fasetto.Word.Lib;assembly=Fasetto.Word.Lib"
              mc:Ignorable="d"
-             d:DataContext="{x:Static lib:ChatAttachmentPopupMenuDesignModel.Instance}">
+             d:DataContext="{x:Static local:ChatAttachmentPopupMenuDesignModel.Instance}">
     
     <!-- Chat message container -->
     <Grid>

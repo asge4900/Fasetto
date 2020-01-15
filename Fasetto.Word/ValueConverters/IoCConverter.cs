@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.Globalization;
+using static Fasetto.Word.DI;
 
 namespace Fasetto.Word
 {
@@ -16,7 +17,7 @@ namespace Fasetto.Word
             switch ((string)value)
             {
                 case nameof(ApplicationViewModel):
-                    return IoC.Application;                
+                    return ViewModelApplication;                
 
                 default:
                     Debugger.Break();
