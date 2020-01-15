@@ -1,5 +1,4 @@
-﻿using Fasetto.Word.Lib;
-using System;
+﻿using System;
 using System.Diagnostics;
 using System.Windows;
 using System.Windows.Controls;
