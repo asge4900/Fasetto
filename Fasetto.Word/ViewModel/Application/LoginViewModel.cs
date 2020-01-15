@@ -63,7 +63,7 @@ namespace Fasetto.Word
             {
                 // Call the server and attempt to login with credentials
                 // TODO: Move all URLS and API routes to static class
-                var result = await WebRequests.PostAsync<ApiResponse<LoginResultApiModel>>(
+                var result = await WebRequests.PostAsync<ApiResponse<UserProfileDetailsApiModel>>(
                     "http://localhost:58727/api/login",
                     new LoginCredentialsApiModel
                     {                        

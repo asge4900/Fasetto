@@ -59,7 +59,7 @@ namespace Fasetto.Word
         /// Handles what happen when we have successfully logged in
         /// </summary>
         /// <param name="loginResult">The results from the succesful login</param>
-        public async Task HandleSuccessfulLoginAsync(LoginResultApiModel loginResult)
+        public async Task HandleSuccessfulLoginAsync(UserProfileDetailsApiModel loginResult)
         {
             // Store this in the client data store
             await ClientDataStore.SaveLoginCredentialsAsync(new LoginCredentialsDataModel
