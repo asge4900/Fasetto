@@ -52,7 +52,7 @@ namespace Fasetto.Word.Web.Server
 
         #endregion
 
-        #region Login / Register / Verify
+        #region Login / Register
 
         /// <summary>
         /// Tries to register for a new account on the server
@@ -216,6 +216,7 @@ namespace Fasetto.Word.Web.Server
         /// Returns the users profile details based on the authenticated user
         /// </summary>
         /// <returns></returns>
+       [Route("api/user/profile")]
         public async Task<ApiResponse<UserProfileDetailsApiModel>> GetUserProfileAsync()
         {
             // Get user claims

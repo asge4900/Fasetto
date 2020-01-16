@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows;
 using static Fasetto.Word.DI;
 using static Dna.FrameworkDI;
+using static Fasetto.Word.Lib.CoreDI;
 
 namespace Fasetto.Word
 {
@@ -59,7 +60,7 @@ namespace Fasetto.Word
             await ClientDataStore.EnsureDataStoreAsync();
 
             // Load new settings
-            await ViewModelSettings.LoadAsync();
+           TaskManager.RunAndForget(ViewModelSettings.LoadAsync);
         }
     }
 }

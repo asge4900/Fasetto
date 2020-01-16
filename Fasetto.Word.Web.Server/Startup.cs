@@ -122,9 +122,11 @@ namespace Fasetto.Word.Web.Server
             app.UseStaticFiles();
 
             app.UseRouting();
+            
+            app.UseAuthorization();
 
             // Setup Identity
-            app.UseAuthorization();            
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
@@ -133,6 +135,9 @@ namespace Fasetto.Word.Web.Server
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+
+            // Make sure we have the database
+            serviceProvider.GetService<ApplicationDbContext>().Database.EnsureCreated();
         }
     }
 }

@@ -10,7 +10,7 @@ namespace Fasetto.Word
     /// The settings state as a view model
     /// </summary>
     public class SettingsViewModel : BaseViewModel
-    {
+    { 
         #region Constructor
 
         /// <summary>
@@ -18,10 +18,45 @@ namespace Fasetto.Word
         /// </summary>
         public SettingsViewModel()
         {
+            // The text to show while loading
+            var loadingText = "...";
+
+            // Create name
+            Name = new TextEntryViewModel
+            {
+                Label = "Name",
+                OriginalText = loadingText,
+                CommitAction = SaveNameAsync
+            };
+
+            // Create Username
+            Username = new TextEntryViewModel
+            {
+                Label = "Username",
+                OriginalText = loadingText,
+                CommitAction = SaveUsernameAsync
+            };
+
+            // Create Password
+            Password = new PasswordEntryViewModel
+            {
+                Label = "Password",
+                FakePassword = "********",
+                CommitAction = SavePasswordAsync
+            };
+
+            // Create Email
+            Email = new TextEntryViewModel
+            {
+                Label = "Email",
+                OriginalText = loadingText,
+                CommitAction = SaveEmailAsync
+            };
+
             // Create commands
             OpenCommand = new RelayCommand(Open);
             CloseCommand = new RelayCommand(Close);
-            LogoutCommand = new RelayCommand(Logout);            
+            LogoutCommand = new RelayCommand(async () => await LogoutAsync());            
             ClearUserDataCommand = new RelayCommand(ClearUserData);
             LoadCommand = new RelayCommand(async () => await LoadAsync());
             SaveNameCommand = new RelayCommand(async () => await SaveNameAsync());
@@ -105,7 +140,9 @@ namespace Fasetto.Word
         /// </summary>
         public ICommand SaveEmailCommand { get; set; }
 
-        #endregion        
+        #endregion
+
+        #region Commands Methods
 
         /// <summary>
         /// Open the settings menu
@@ -128,11 +165,12 @@ namespace Fasetto.Word
         /// <summary>
         /// Logs the user out
         /// </summary>
-        public void Logout()
+        public async Task LogoutAsync()
         {
             //TODO: Confirm the user wants to logout
 
-            //TODO: Clear any user data/cache
+            //Clear any user data/cache
+            await ClientDataStore.ClearAllLoginCredentialsAsync();
 
             //Clean all application level view models that contain
             //any information about the current user
@@ -159,33 +197,13 @@ namespace Fasetto.Word
         /// </summary>
         public async Task LoadAsync()
         {
-            // Get the stored credentials
-            var storedCredentials = await ClientDataStore.GetLoginCredentialsAsync();
+            await Task.Delay(5000);            
 
-            Name = new TextEntryViewModel 
-            { Label = "Name",
-              OriginalText = $"{storedCredentials?.FirstName} {storedCredentials?.LastName}",
-              CommitAction = SaveNameAsync
-            };
+            await UpdateValuesFromLocalStoreAsync();
 
-            Username = new TextEntryViewModel 
-            { Label = "Username", 
-              OriginalText = storedCredentials?.Username,
-              CommitAction = SaveUsernameAsync
-            };
-
-            Password = new PasswordEntryViewModel 
-            { Label = "Password", 
-              FakePassword = "********",
-              CommitAction = SavePasswordAsync
-            };
-
-            Email = new TextEntryViewModel 
-            { Label = "Email", 
-              OriginalText = storedCredentials?.Email,
-              CommitAction = SaveEmailAsync
-            };           
+            // TODO: Load from server
         }
+
 
         /// <summary>
         /// Saves the new Name to the server
@@ -242,5 +260,32 @@ namespace Fasetto.Word
             // Return succes
             return true;
         }
+
+        #endregion
+
+        #region Private Hepler Methods
+
+
+        /// <summary>
+        /// Loads the settings from the local data store and binds them
+        /// to this view model
+        /// </summary>
+        /// <returns></returns>
+        private async Task UpdateValuesFromLocalStoreAsync()
+        {
+            // Get the stored credentials
+            var storedCredentials = await ClientDataStore.GetLoginCredentialsAsync();
+
+            // Set name
+            Name.OriginalText = $"{storedCredentials?.FirstName} {storedCredentials?.LastName}";
+
+            // Set username
+            Username.OriginalText = storedCredentials?.Username;
+
+            // Set email
+            Email.OriginalText = storedCredentials?.Email;
+        }     
+
+        #endregion
     }
 }

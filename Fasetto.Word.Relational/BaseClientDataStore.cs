@@ -71,6 +71,8 @@ namespace Fasetto.Word.Relational
         /// <returns>Returns a task that will finish once the save is complete</returns>
         public async Task SaveLoginCredentialsAsync(LoginCredentialsDataModel loginCredentials)
         {
+            // TODO: Replace with stored procedure/Transactions
+
             // Clear all entries
             mDbContext.LoginCredentials.RemoveRange(mDbContext.LoginCredentials);
 
@@ -85,9 +87,15 @@ namespace Fasetto.Word.Relational
         /// Removes all login credentials stored in the data store
         /// </summary>
         /// <returns></returns>
-        public Task ClearAllLoginCredentialsAsync()
+        public async Task ClearAllLoginCredentialsAsync()
         {
-            throw new System.NotImplementedException();
+            // TODO: Replace with stored procedure/Transactions
+
+            // Clear all entries
+            mDbContext.LoginCredentials.RemoveRange(mDbContext.LoginCredentials);
+
+            // Save changes
+            await mDbContext.SaveChangesAsync();
         }
 
         #endregion

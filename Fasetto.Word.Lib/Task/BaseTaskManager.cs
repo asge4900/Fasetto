@@ -31,6 +31,13 @@ namespace Fasetto.Word.Lib
             }
         }
 
+
+        public async void RunAndForget(Func<Task> funtion, [CallerMemberName] string origin = "", [CallerFilePath] string filePath = "", [CallerLineNumber] int lineNumber = 0)
+        {
+            await Run(funtion, origin, filePath, lineNumber);
+        }
+
+
         public async Task<TResult> Run<TResult>(Func<Task<TResult>> function, CancellationToken cancellationToken, [CallerMemberName]string origin = "", [CallerFilePath]string filePath = "", [CallerLineNumber]int lineNumber = 0)
         {
             try
@@ -151,6 +158,6 @@ namespace Fasetto.Word.Lib
         }
 
         #endregion
-       
+
     }
 }
