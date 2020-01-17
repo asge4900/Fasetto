@@ -134,10 +134,7 @@ namespace Fasetto.Word.Web.Server
                 endpoints.MapControllerRoute(
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
-            });
-
-            // Make sure we have the database
-            serviceProvider.GetService<ApplicationDbContext>().Database.EnsureCreated();
+            });            
         }
     }
 }

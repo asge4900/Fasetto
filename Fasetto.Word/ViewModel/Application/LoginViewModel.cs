@@ -11,7 +11,7 @@ namespace Fasetto.Word
     /// The View Model for a login screen
     /// </summary>
     public class LoginViewModel : BaseViewModel
-    {    
+    {
 
         #region Constructor
 
@@ -66,7 +66,7 @@ namespace Fasetto.Word
                 var result = await WebRequests.PostAsync<ApiResponse<UserProfileDetailsApiModel>>(
                     "http://localhost:58727/api/login",
                     new LoginCredentialsApiModel
-                    {                        
+                    {
                         UsernameOrEmail = Email,
                         Password = (parameter as IHavePassword).SecurePassword.Unsecure()
                     });
