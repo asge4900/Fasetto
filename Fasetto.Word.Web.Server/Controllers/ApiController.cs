@@ -194,15 +194,7 @@ namespace Fasetto.Word.Web.Server
             // Get username
             var username = user.UserName;
 
-            int number = 1;
-
-            decimal id = 0.5M;
-
-            if ((decimal)number > id)
-            {
-
-            }
-
+           
             // Return token to user
             return new ApiResponse<UserProfileDetailsApiModel>
             {
