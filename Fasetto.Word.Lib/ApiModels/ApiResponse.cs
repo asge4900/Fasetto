@@ -3,7 +3,7 @@
     /// <summary>
     /// The response for all Web API calls made
     /// </summary>
-    public class ApiResponse<T>
+    public class ApiResponse
     {
 
         #region Constructor
@@ -33,7 +33,7 @@
         /// <summary>
         /// The API response object
         /// </summary>
-        public T Response { get; set; }
+        public object Response { get; set; }
 
 
         #endregion
@@ -44,11 +44,13 @@
     /// with a specific type of known response
     /// </summary>
     /// <typeparam name="T">The specific type of server response</typeparam>
-    //public class ApiResponse<T> : ApiResponse
-    //{
-    //    /// <summary>
-    //    /// The API response object as T
-    //    /// </summary>
-    //    public new T Response { get => (T)base.Response; set => base.Response = value; }
-    //}
+    public class ApiResponse<T> : ApiResponse
+    {
+        /// <summary>
+        /// The API response object as T
+        /// </summary>
+        //public new T Response { get => (T)base.Response; set => base.Response = value; }
+
+        public T ResponseT { get; set; }
+    }
 }

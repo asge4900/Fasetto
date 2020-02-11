@@ -1,4 +1,5 @@
-﻿using Fasetto.Word.Lib;
+﻿using Dna;
+using Fasetto.Word.Lib;
 using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
@@ -196,12 +197,23 @@ namespace Fasetto.Word
         /// Sets the settings view model properties based on the data in the client data store
         /// </summary>
         public async Task LoadAsync()
-        {
-            await Task.Delay(5000);            
-
+        {  
+            // Update local cached values
             await UpdateValuesFromLocalStoreAsync();
 
-            // TODO: Load from server
+            // Load user profile details from server
+            var result = await WebRequests.PostAsync<ApiResponse<UserProfileDetailsApiModel>>(
+                "http://localhost:58727/api/user/profile");
+
+            // If it was successful...
+            if (result.Successful)
+            {
+                // Create data model from the response
+                var dataModel = result.ServerResponse.ResponseT.ToLoginCredentialsDataModel();
+                
+                // Save the new information in the data store
+                await ClientDataStore.SaveLoginCredentialsAsync(dataModel);
+            }
         }
 
 

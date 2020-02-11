@@ -81,7 +81,7 @@ namespace Fasetto.Word
                 return;
 
             // OK successfully registered (and logged in)... now get users data
-            var loginResult = result.ServerResponse.Response;
+            var loginResult = result.ServerResponse.ResponseT;
 
             // Let the application view model handle what happens
             // With the successful login

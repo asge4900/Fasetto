@@ -109,7 +109,7 @@ namespace Fasetto.Word.Web.Server
                 // Return valid response containing all users details
                 return new ApiResponse<RegisterResultApiModel>
                 {
-                    Response = new RegisterResultApiModel
+                    ResponseT = new RegisterResultApiModel
                     {
                         Id = userIdentity.Id,
                         FirstName = userIdentity.FirstName,
@@ -199,7 +199,7 @@ namespace Fasetto.Word.Web.Server
             return new ApiResponse<UserProfileDetailsApiModel>
             {
                 // Pass back the user details and the token
-                Response = new UserProfileDetailsApiModel
+                ResponseT = new UserProfileDetailsApiModel
                 {
                     Id = user.Id,
                     FirstName = user.FirstName,
@@ -236,7 +236,7 @@ namespace Fasetto.Word.Web.Server
             return new ApiResponse<UserProfileDetailsApiModel>
             {
                 // Pass back the user details and the token
-                Response = new UserProfileDetailsApiModel
+                ResponseT = new UserProfileDetailsApiModel
                 {
                     FirstName = user.FirstName,
                     LastName = user.LastName,
@@ -246,108 +246,103 @@ namespace Fasetto.Word.Web.Server
             };
         }
 
+        /// <summary>
+        /// Attempts to update the users profile details
+        /// </summary>
+        /// <param name="model">The user profile details to update</param>
+        /// <returns>
+        ///     Returns successful response if the update was successful, 
+        ///     otherwise returns the error reasons for the failure
+        /// </returns>
+        [Route("api/user/profile/update")]
+        public async Task<ApiResponse> UpdateUserProfileAsync([FromBody]UpdateUserProfileApiModel model)
+        {
+            #region Declare Variables
 
-       
+            // Make a list of empty errors
+            var errors = new List<string>();
 
-        
+            // Keep track of email change
+            var emailChanged = false;
+
+            #endregion
+
+            #region Get User
+
+            // Get the current user
+            var user = await userManager.GetUserAsync(HttpContext.User);
+
+            // If we have no user...
+            if (user == null)
+                return new ApiResponse
+                {
+                    // TODO: Localization
+                    ErrorMessage = "User not found"
+                };
+
+            #endregion
+
+            #region Update Profile
+
+            // If we have a first name...
+            if (model.FirstName != null)
+                // Update the profile details
+                user.FirstName = model.FirstName;
+
+            // If we have a last name...
+            if (model.LastName != null)
+                // Update the profile details
+                user.LastName = model.LastName;
+
+            // If we have a email...
+            if (model.Email != null &&
+                // And it is not the same...
+                !string.Equals(model.Email.Replace(" ", ""), user.NormalizedEmail))
+            {
+                // Update the email
+                user.Email = model.Email;
+
+                // Un-verify the email
+                user.EmailConfirmed = false;
+
+                // Flag we have changed email
+                emailChanged = true;
+            }
+
+            // If we have a username...
+            if (model.Username != null)
+                // Update the profile details
+                user.UserName = model.Username;
+
+            #endregion
+
+            #region Save Profile
+
+            // Attempt to commit changes to data store
+            var result = await userManager.UpdateAsync(user);
+
+            // If successful, send out email verification
+
+            // Send email verification
 
 
-        ///// <summary>
-        ///// Attempts to update the users profile details
-        ///// </summary>
-        ///// <param name="model">The user profile details to update</param>
-        ///// <returns>
-        /////     Returns successful response if the update was successful, 
-        /////     otherwise returns the error reasons for the failure
-        ///// </returns>
-        //public async Task<ApiResponse> UpdateUserProfileAsync([FromBody]UpdateUserProfileApiModel model)
-        //{
-        //    #region Declare Variables
+            #endregion
 
-        //    // Make a list of empty errors
-        //    var errors = new List<string>();
+            #region Respond
 
-        //    // Keep track of email change
-        //    var emailChanged = false;
+            // If we were successful...
+            if (result.Succeeded)
+                // Return successful response
+                return new ApiResponse();
+            // Otherwise if it failed...
+            else
+                // Return the failed response
+                return new ApiResponse
+                {
+                    ErrorMessage = result.Errors.AggregateErrors()
+                };
 
-        //    #endregion
-
-        //    #region Get User
-
-        //    // Get the current user
-        //    var user = await userManager.GetUserAsync(HttpContext.User);
-
-        //    // If we have no user...
-        //    if (user == null)
-        //        return new ApiResponse
-        //        {
-        //            // TODO: Localization
-        //            ErrorMessage = "User not found"
-        //        };
-
-        //    #endregion
-
-        //    #region Update Profile
-
-        //    // If we have a first name...
-        //    if (model.FirstName != null)
-        //        // Update the profile details
-        //        user.FirstName = model.FirstName;
-
-        //    // If we have a last name...
-        //    if (model.LastName != null)
-        //        // Update the profile details
-        //        user.LastName = model.LastName;
-
-        //    // If we have a email...
-        //    if (model.Email != null &&
-        //        // And it is not the same...
-        //        !string.Equals(model.Email.Replace(" ", ""), user.NormalizedEmail))
-        //    {
-        //        // Update the email
-        //        user.Email = model.Email;
-
-        //        // Un-verify the email
-        //        user.EmailConfirmed = false;
-
-        //        // Flag we have changed email
-        //        emailChanged = true;
-        //    }
-
-        //    // If we have a username...
-        //    if (model.Username != null)
-        //        // Update the profile details
-        //        user.UserName = model.Username;
-
-        //    #endregion
-
-        //    #region Save Profile
-
-        //    // Attempt to commit changes to data store
-        //    var result = await userManager.UpdateAsync(user);
-
-        //    // If successful, send out email verification
-            
-        //        // Send email verification
-                
-
-        //    #endregion
-
-        //    #region Respond
-
-        //    // If we were successful...
-        //    if (result.Succeeded)
-        //        // Return successful response
-        //        return new ApiResponse();
-        //    // Otherwise if it failed...
-        //    else
-        //        // Return the failed response
-        //        return new ApiResponse
-        //        {
-        //            ErrorMessage = result.Errors.AggregateErrors()
-        //        };
-
-        //    #endregion
-        //}
+            #endregion
+        }
     }
 }

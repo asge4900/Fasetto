@@ -47,6 +47,23 @@
         /// </summary>
         public string Email { get; set; }
 
-        #endregion        
+        #endregion
+
+        #region Public Helper Methods
+
+        public LoginCredentialsDataModel ToLoginCredentialsDataModel()
+        {
+            return new LoginCredentialsDataModel
+            {
+                Id = Id,
+                Email = Email,
+                FirstName = FirstName,
+                LastName = LastName,
+                Username = Username,
+                Token = Token
+            };
+        }
+
+        #endregion
     }
 }

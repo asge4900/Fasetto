@@ -2439,3 +2439,271 @@ INFORMATION: [2020-01-17 10:16:06] Executing ObjectResult, writing value of type
 INFORMATION: [2020-01-17 10:16:06] Executed action Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) in 544.8908ms
 INFORMATION: [2020-01-17 10:16:06] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
 INFORMATION: [2020-01-17 10:16:06] Request finished in 858.15ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-11 03:48:55] User profile is available. Using 'C:\Users\asger\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFORMATION: [2020-02-11 03:48:56] Request starting HTTP/1.1 GET http://localhost:58727/  
+INFORMATION: [2020-02-11 03:48:56] Executing endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 03:48:56] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Fasetto.Word.Web.Server.HomeController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-11 03:48:56] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-11 03:49:13] Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+INFORMATION: [2020-02-11 03:49:14] Executed DbCommand (965ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+INFORMATION: [2020-02-11 03:49:15] Executed DbCommand (290ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFORMATION: [2020-02-11 03:49:15] Executing ViewResult, running view Index.
+INFORMATION: [2020-02-11 03:49:15] Executed ViewResult - view Index executed in 266.8014ms.
+INFORMATION: [2020-02-11 03:49:15] Executed action Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server) in 19669.0309ms
+INFORMATION: [2020-02-11 03:49:15] Executed endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 03:49:15] Request starting HTTP/1.1 GET http://localhost:58727/lib/bootstrap/dist/css/bootstrap.min.css  
+INFORMATION: [2020-02-11 03:49:15] Request starting HTTP/1.1 GET http://localhost:58727/css/site.css  
+INFORMATION: [2020-02-11 03:49:15] Request starting HTTP/1.1 GET http://localhost:58727/lib/jquery/dist/jquery.min.js  
+INFORMATION: [2020-02-11 03:49:15] Request starting HTTP/1.1 GET http://localhost:58727/js/site.js?v=4q1jwFhaPaZgr8WAUSrux6hAuh0XDg9kPS3xIVq36I0  
+INFORMATION: [2020-02-11 03:49:15] Request starting HTTP/1.1 GET http://localhost:58727/lib/bootstrap/dist/js/bootstrap.bundle.min.js  
+INFORMATION: [2020-02-11 03:49:15] Request finished in 19859.8758ms 200 text/html; charset=utf-8
+INFORMATION: [2020-02-11 03:49:15] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\asger\source\repos\Fasetto\Fasetto.Word.Web.Server\wwwroot\js\site.js'
+INFORMATION: [2020-02-11 03:49:15] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\asger\source\repos\Fasetto\Fasetto.Word.Web.Server\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+INFORMATION: [2020-02-11 03:49:15] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\asger\source\repos\Fasetto\Fasetto.Word.Web.Server\wwwroot\css\site.css'
+INFORMATION: [2020-02-11 03:49:15] Request finished in 112.4633ms 200 application/javascript
+INFORMATION: [2020-02-11 03:49:16] Request finished in 131.4251ms 200 text/css
+INFORMATION: [2020-02-11 03:49:16] Request finished in 144.2617ms 200 text/css
+INFORMATION: [2020-02-11 03:49:16] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\asger\source\repos\Fasetto\Fasetto.Word.Web.Server\wwwroot\lib\jquery\dist\jquery.min.js'
+INFORMATION: [2020-02-11 03:49:16] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\asger\source\repos\Fasetto\Fasetto.Word.Web.Server\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+INFORMATION: [2020-02-11 03:49:16] Request finished in 202.5924ms 200 application/javascript
+INFORMATION: [2020-02-11 03:49:16] Request finished in 218.9658ms 200 application/javascript
+INFORMATION: [2020-02-11 03:49:16] Request starting HTTP/1.1 GET http://localhost:58727/favicon.ico  
+INFORMATION: [2020-02-11 03:49:16] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\asger\source\repos\Fasetto\Fasetto.Word.Web.Server\wwwroot\favicon.ico'
+INFORMATION: [2020-02-11 03:49:16] Request finished in 71.3857ms 200 image/x-icon
+INFORMATION: [2020-02-11 03:50:17] User profile is available. Using 'C:\Users\asger\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFORMATION: [2020-02-11 03:50:17] Request starting HTTP/1.1 GET http://localhost:58727/  
+INFORMATION: [2020-02-11 03:50:17] Executing endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 03:50:17] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Fasetto.Word.Web.Server.HomeController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-11 03:50:18] Executing action method Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server) - Validation state: Valid
+INFORMATION: [2020-02-11 03:50:19] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-11 03:50:20] Executed DbCommand (28ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+INFORMATION: [2020-02-11 03:50:22] Executed DbCommand (1,068ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+INFORMATION: [2020-02-11 03:50:22] Executed DbCommand (81ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFORMATION: [2020-02-11 03:50:22] Executed action method Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3819.4849ms.
+INFORMATION: [2020-02-11 03:50:22] Executing ViewResult, running view Index.
+INFORMATION: [2020-02-11 03:50:22] Executed ViewResult - view Index executed in 191.2809ms.
+INFORMATION: [2020-02-11 03:50:22] Executed action Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server) in 4926.4706ms
+INFORMATION: [2020-02-11 03:50:22] Executed endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 03:50:22] Request finished in 5142.5173ms 200 text/html; charset=utf-8
+INFORMATION: [2020-02-11 03:51:24] Request starting HTTP/1.1 POST http://localhost:58727/api/login application/json 50
+INFORMATION: [2020-02-11 03:51:25] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 03:51:25] Route matched with {action = "LogIn", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] LogInAsync(Fasetto.Word.Lib.LoginCredentialsApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-11 03:51:25] Executing action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) - Validation state: Valid
+INFORMATION: [2020-02-11 03:51:25] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-11 03:51:26] Executed DbCommand (244ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+WARNING: [2020-02-11 03:51:26] Invalid password for user 1e390e43-d982-4a4c-a98a-b9ddbe85a165.
+INFORMATION: [2020-02-11 03:51:26] Executed action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 659.85ms.
+INFORMATION: [2020-02-11 03:51:26] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-11 03:51:26] Executed action Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) in 926.563ms
+INFORMATION: [2020-02-11 03:51:26] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+ERROR: [2020-02-11 03:51:27] An unhandled exception has occurred while executing the request.
+INFORMATION: [2020-02-11 03:51:27] Request finished in 2980.3344ms 500 text/plain
+INFORMATION: [2020-02-11 03:52:13] Request starting HTTP/1.1 POST http://localhost:58727/api/login application/json 50
+INFORMATION: [2020-02-11 03:52:13] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 03:52:13] Route matched with {action = "LogIn", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] LogInAsync(Fasetto.Word.Lib.LoginCredentialsApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-11 03:52:13] Executing action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) - Validation state: Valid
+INFORMATION: [2020-02-11 03:52:13] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-11 03:52:13] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+WARNING: [2020-02-11 03:52:13] Invalid password for user 1e390e43-d982-4a4c-a98a-b9ddbe85a165.
+INFORMATION: [2020-02-11 03:52:13] Executed action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 81.8027ms.
+INFORMATION: [2020-02-11 03:52:13] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-11 03:52:13] Executed action Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) in 264.6633ms
+INFORMATION: [2020-02-11 03:52:14] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+ERROR: [2020-02-11 03:52:14] An unhandled exception has occurred while executing the request.
+INFORMATION: [2020-02-11 03:52:14] Request finished in 444.6735ms 500 text/plain
+INFORMATION: [2020-02-11 04:01:05] Request starting HTTP/1.1 POST http://localhost:58727/api/login application/json 50
+INFORMATION: [2020-02-11 04:01:05] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:01:05] Route matched with {action = "LogIn", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] LogInAsync(Fasetto.Word.Lib.LoginCredentialsApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-11 04:01:05] Executing action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) - Validation state: Valid
+INFORMATION: [2020-02-11 04:01:05] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-11 04:01:06] Executed DbCommand (254ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+WARNING: [2020-02-11 04:01:06] Invalid password for user 1e390e43-d982-4a4c-a98a-b9ddbe85a165.
+INFORMATION: [2020-02-11 04:01:06] Executed action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 737.1696ms.
+INFORMATION: [2020-02-11 04:01:06] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-11 04:01:06] Executed action Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) in 839.9973ms
+INFORMATION: [2020-02-11 04:01:06] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+ERROR: [2020-02-11 04:01:06] An unhandled exception has occurred while executing the request.
+INFORMATION: [2020-02-11 04:01:06] Request finished in 1006.5489ms 500 text/plain
+INFORMATION: [2020-02-11 04:01:49] User profile is available. Using 'C:\Users\asger\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFORMATION: [2020-02-11 04:01:49] Request starting HTTP/1.1 GET http://localhost:58727/  
+INFORMATION: [2020-02-11 04:01:49] Executing endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:01:49] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Fasetto.Word.Web.Server.HomeController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-11 04:01:49] Executing action method Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server) - Validation state: Valid
+INFORMATION: [2020-02-11 04:01:50] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-11 04:01:50] Executed DbCommand (24ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+INFORMATION: [2020-02-11 04:01:51] Executed DbCommand (461ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+INFORMATION: [2020-02-11 04:01:53] Executed DbCommand (1,852ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFORMATION: [2020-02-11 04:01:53] Executed action method Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3789.0275ms.
+INFORMATION: [2020-02-11 04:01:53] Executing ViewResult, running view Index.
+INFORMATION: [2020-02-11 04:01:53] Executed ViewResult - view Index executed in 169.7203ms.
+INFORMATION: [2020-02-11 04:01:53] Executed action Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server) in 4249.7475ms
+INFORMATION: [2020-02-11 04:01:53] Executed endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:01:53] Request finished in 4452.0992ms 200 text/html; charset=utf-8
+INFORMATION: [2020-02-11 04:02:23] Request starting HTTP/1.1 POST http://localhost:58727/api/login application/json 50
+INFORMATION: [2020-02-11 04:02:23] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:02:23] Route matched with {action = "LogIn", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] LogInAsync(Fasetto.Word.Lib.LoginCredentialsApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-11 04:02:23] Executing action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) - Validation state: Valid
+INFORMATION: [2020-02-11 04:02:23] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-11 04:02:23] Executed DbCommand (355ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+WARNING: [2020-02-11 04:02:24] Invalid password for user 1e390e43-d982-4a4c-a98a-b9ddbe85a165.
+INFORMATION: [2020-02-11 04:02:24] Executed action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 601.4981ms.
+INFORMATION: [2020-02-11 04:02:24] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-11 04:02:33] Executed action Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) in 10300.5291ms
+INFORMATION: [2020-02-11 04:02:33] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:02:33] Request finished in 10635.2206ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-11 04:03:20] Request starting HTTP/1.1 POST http://localhost:58727/api/login application/json 50
+INFORMATION: [2020-02-11 04:03:21] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:03:21] Route matched with {action = "LogIn", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] LogInAsync(Fasetto.Word.Lib.LoginCredentialsApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-11 04:03:21] Executing action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) - Validation state: Valid
+INFORMATION: [2020-02-11 04:03:21] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-11 04:03:21] Executed DbCommand (21ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+WARNING: [2020-02-11 04:03:21] Invalid password for user 1e390e43-d982-4a4c-a98a-b9ddbe85a165.
+INFORMATION: [2020-02-11 04:03:21] Executed action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 139.4862ms.
+INFORMATION: [2020-02-11 04:03:21] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-11 04:03:43] User profile is available. Using 'C:\Users\asger\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFORMATION: [2020-02-11 04:03:44] Request starting HTTP/1.1 GET http://localhost:58727/  
+INFORMATION: [2020-02-11 04:03:44] Executing endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:03:44] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Fasetto.Word.Web.Server.HomeController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-11 04:03:45] Executing action method Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server) - Validation state: Valid
+INFORMATION: [2020-02-11 04:03:46] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-11 04:03:47] Executed DbCommand (30ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+INFORMATION: [2020-02-11 04:03:48] Executed DbCommand (821ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+INFORMATION: [2020-02-11 04:03:48] Executed DbCommand (78ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFORMATION: [2020-02-11 04:03:48] Executed action method Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3241.1286ms.
+INFORMATION: [2020-02-11 04:03:48] Executing ViewResult, running view Index.
+INFORMATION: [2020-02-11 04:03:49] Executed ViewResult - view Index executed in 201.8283ms.
+INFORMATION: [2020-02-11 04:03:49] Executed action Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server) in 4055.9086ms
+INFORMATION: [2020-02-11 04:03:49] Executed endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:03:49] Request finished in 4476.0773ms 200 text/html; charset=utf-8
+INFORMATION: [2020-02-11 04:04:17] Request starting HTTP/1.1 POST http://localhost:58727/api/login application/json 50
+INFORMATION: [2020-02-11 04:04:17] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:04:17] Route matched with {action = "LogIn", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] LogInAsync(Fasetto.Word.Lib.LoginCredentialsApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-11 04:04:17] Executing action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) - Validation state: Valid
+INFORMATION: [2020-02-11 04:04:17] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-11 04:04:18] Executed DbCommand (62ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+WARNING: [2020-02-11 04:04:18] Invalid password for user 1e390e43-d982-4a4c-a98a-b9ddbe85a165.
+INFORMATION: [2020-02-11 04:04:18] Executed action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 327.85ms.
+INFORMATION: [2020-02-11 04:04:18] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-11 04:04:18] Executed action Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) in 595.8684ms
+INFORMATION: [2020-02-11 04:04:18] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:04:18] Request finished in 856.8402ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-11 04:04:31] Request starting HTTP/1.1 POST http://localhost:58727/api/login application/json 52
+INFORMATION: [2020-02-11 04:04:31] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:04:31] Route matched with {action = "LogIn", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] LogInAsync(Fasetto.Word.Lib.LoginCredentialsApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-11 04:04:31] Executing action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) - Validation state: Valid
+INFORMATION: [2020-02-11 04:04:31] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-11 04:04:31] Executed DbCommand (3ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-11 04:04:32] Executed action method Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server), returned result Microsoft.AspNetCore.Mvc.ObjectResult in 1653.9603ms.
+INFORMATION: [2020-02-11 04:04:32] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-11 04:04:32] Executed action Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server) in 1765.4453ms
+INFORMATION: [2020-02-11 04:04:32] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.LogInAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-11 04:04:32] Request finished in 1862.3763ms 200 application/json; charset=utf-8
