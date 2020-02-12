@@ -11,16 +11,23 @@ namespace Fasetto.Word
     /// The settings state as a view model
     /// </summary>
     public class SettingsViewModel : BaseViewModel
-    { 
+    {
+        #region Fields
+
+        /// <summary>
+        /// The text to show while loading text
+        /// </summary>
+        private string loadingText = "...";
+
+        #endregion
+
         #region Constructor
 
         /// <summary>
         /// Default constructor
         /// </summary>
         public SettingsViewModel()
-        {
-            // The text to show while loading
-            var loadingText = "...";
+        {          
 
             // Create name
             Name = new TextEntryViewModel
@@ -187,10 +194,9 @@ namespace Fasetto.Word
         public void ClearUserData()
         {
             //Clear all view models containing the users info
-            Name = null;
-            Username = null;
-            Password = null;
-            Email = null;
+            Name.OriginalText = loadingText;
+            Username.OriginalText = loadingText;            
+            Email.OriginalText = loadingText;
         }
 
         /// <summary>
@@ -198,21 +204,39 @@ namespace Fasetto.Word
         /// </summary>
         public async Task LoadAsync()
         {  
-            // Update local cached values
+            // Update values from local cache
             await UpdateValuesFromLocalStoreAsync();
+
+            var token = (await ClientDataStore.GetLoginCredentialsAsync()).Token;
+
+            // If we dont have a token (so we are not logged in...)
+            if (string.IsNullOrEmpty(token))
+            {
+                // Then do nothing more
+                return;
+            }
 
             // Load user profile details from server
             var result = await WebRequests.PostAsync<ApiResponse<UserProfileDetailsApiModel>>(
-                "http://localhost:58727/api/user/profile");
+                "http://localhost:58727/api/user/profile", 
+                bearerToken: token);
 
             // If it was successful...
             if (result.Successful)
             {
+                // TODO: Should we check if the values are diffent before saving?
+
                 // Create data model from the response
                 var dataModel = result.ServerResponse.ResponseT.ToLoginCredentialsDataModel();
+
+                // Re-add our known token
+                dataModel.Token = token;
                 
                 // Save the new information in the data store
                 await ClientDataStore.SaveLoginCredentialsAsync(dataModel);
+
+                // Update values from local cache
+                await UpdateValuesFromLocalStoreAsync();
             }
         }
 

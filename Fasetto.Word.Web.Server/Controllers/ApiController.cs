@@ -238,6 +238,7 @@ namespace Fasetto.Word.Web.Server
                 // Pass back the user details and the token
                 ResponseT = new UserProfileDetailsApiModel
                 {
+                    Id = user.Id,
                     FirstName = user.FirstName,
                     LastName = user.LastName,
                     Email = user.Email,
