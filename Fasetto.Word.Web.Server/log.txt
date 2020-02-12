@@ -3194,3 +3194,347 @@ INFORMATION: [2020-02-12 10:49:25] Executing ObjectResult, writing value of type
 INFORMATION: [2020-02-12 10:49:25] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 46.5932ms
 INFORMATION: [2020-02-12 10:49:25] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
 INFORMATION: [2020-02-12 10:49:25] Request finished in 151.2951ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 11:13:38] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 11:13:38] Successfully validated the token.
+INFORMATION: [2020-02-12 11:13:38] Authorization was successful.
+INFORMATION: [2020-02-12 11:13:38] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:13:38] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 11:13:38] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 11:13:39] Executed DbCommand (9ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 11:13:39] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 11:13:39] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 878.8577ms
+INFORMATION: [2020-02-12 11:13:39] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:13:39] Request finished in 1001.3125ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 11:13:40] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 11:13:40] Successfully validated the token.
+INFORMATION: [2020-02-12 11:13:40] Authorization was successful.
+INFORMATION: [2020-02-12 11:13:40] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:13:41] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 11:13:41] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 11:13:41] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 11:13:41] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 11:13:41] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 46.8538ms
+INFORMATION: [2020-02-12 11:13:41] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:13:41] Request finished in 175.1381ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 11:39:37] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 11:39:37] Successfully validated the token.
+INFORMATION: [2020-02-12 11:39:37] Authorization was successful.
+INFORMATION: [2020-02-12 11:39:37] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:39:37] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 11:39:37] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 11:39:38] Executed DbCommand (9ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 11:39:38] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 11:39:38] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 711.5269ms
+INFORMATION: [2020-02-12 11:39:38] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:39:38] Request finished in 826.725ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 11:39:40] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 11:39:40] Successfully validated the token.
+INFORMATION: [2020-02-12 11:39:40] Authorization was successful.
+INFORMATION: [2020-02-12 11:39:40] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:39:40] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 11:39:40] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 11:39:40] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 11:39:40] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 11:39:40] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 47.2196ms
+INFORMATION: [2020-02-12 11:39:40] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:39:40] Request finished in 142.8032ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 11:39:48] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 65
+INFORMATION: [2020-02-12 11:39:48] Successfully validated the token.
+INFORMATION: [2020-02-12 11:39:48] Authorization was successful.
+INFORMATION: [2020-02-12 11:39:48] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:39:48] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 11:39:48] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 11:39:48] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 11:39:48] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-12 11:39:48] Executed DbCommand (5ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-12 11:39:48] Executed DbCommand (5ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-12 11:39:48] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-12 11:39:48] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 254.2509ms
+INFORMATION: [2020-02-12 11:39:48] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:39:48] Request finished in 402.8643ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 11:40:04] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 11:40:04] Successfully validated the token.
+INFORMATION: [2020-02-12 11:40:04] Authorization was successful.
+INFORMATION: [2020-02-12 11:40:04] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:40:04] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 11:40:04] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 11:40:04] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 11:40:04] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 11:40:04] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 46.7159ms
+INFORMATION: [2020-02-12 11:40:04] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:40:04] Request finished in 152.1719ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 11:40:06] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 11:40:06] Successfully validated the token.
+INFORMATION: [2020-02-12 11:40:06] Authorization was successful.
+INFORMATION: [2020-02-12 11:40:06] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:40:06] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 11:40:06] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 11:40:06] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 11:40:06] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 11:40:06] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 44.5279ms
+INFORMATION: [2020-02-12 11:40:06] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:40:06] Request finished in 233.6323ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 11:43:34] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 11:43:34] Successfully validated the token.
+INFORMATION: [2020-02-12 11:43:34] Authorization was successful.
+INFORMATION: [2020-02-12 11:43:34] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:43:34] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 11:43:34] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 11:43:34] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 11:43:34] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 11:43:34] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 50.2232ms
+INFORMATION: [2020-02-12 11:43:34] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:43:34] Request finished in 161.5096ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 11:43:37] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 11:43:37] Successfully validated the token.
+INFORMATION: [2020-02-12 11:43:37] Authorization was successful.
+INFORMATION: [2020-02-12 11:43:37] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:43:37] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 11:43:37] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 11:43:37] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 11:43:37] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 11:43:37] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 48.6239ms
+INFORMATION: [2020-02-12 11:43:37] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 11:43:37] Request finished in 157.8728ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 11:43:42] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 64
+INFORMATION: [2020-02-12 11:43:42] Failed to validate the token.
+INFORMATION: [2020-02-12 11:43:42] Bearer was not authenticated. Failure message: IDX10503: Signature validation failed. Keys tried: '[PII is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+Exceptions caught:
+ '[PII is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+token: '[PII is hidden. For more details, see https://aka.ms/IdentityModel/PII.]'.
+INFORMATION: [2020-02-12 11:43:42] Authorization failed.
+INFORMATION: [2020-02-12 11:43:42] AuthenticationScheme: Bearer was challenged.
+INFORMATION: [2020-02-12 11:43:42] Request finished in 132.4386ms 401 
+INFORMATION: [2020-02-12 02:09:51] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:09:51] Successfully validated the token.
+INFORMATION: [2020-02-12 02:09:51] Authorization was successful.
+INFORMATION: [2020-02-12 02:09:51] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:09:51] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:09:51] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:09:51] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:09:51] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:09:51] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 70.529ms
+INFORMATION: [2020-02-12 02:09:51] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:09:51] Request finished in 206.6818ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:39:13] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:39:14] Successfully validated the token.
+INFORMATION: [2020-02-12 02:39:14] Authorization was successful.
+INFORMATION: [2020-02-12 02:39:14] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:39:14] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:39:14] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:39:14] Executed DbCommand (4ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:39:14] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:39:14] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 61.3964ms
+INFORMATION: [2020-02-12 02:39:14] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:39:14] Request finished in 180.7733ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:40:07] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:40:07] Successfully validated the token.
+INFORMATION: [2020-02-12 02:40:07] Authorization was successful.
+INFORMATION: [2020-02-12 02:40:07] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:40:07] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:40:07] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:40:07] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:40:07] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:40:07] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 55.7964ms
+INFORMATION: [2020-02-12 02:40:07] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:40:07] Request finished in 183.8724ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:40:25] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:40:25] Successfully validated the token.
+INFORMATION: [2020-02-12 02:40:25] Authorization was successful.
+INFORMATION: [2020-02-12 02:40:25] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:40:25] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:40:25] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:40:25] Executed DbCommand (3ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:40:25] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:40:25] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 60.0829ms
+INFORMATION: [2020-02-12 02:40:25] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:40:25] Request finished in 198.1702ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:40:52] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:40:52] Successfully validated the token.
+INFORMATION: [2020-02-12 02:40:52] Authorization was successful.
+INFORMATION: [2020-02-12 02:40:52] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:40:52] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:40:52] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:40:52] Executed DbCommand (5ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:40:52] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:40:53] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 66.5621ms
+INFORMATION: [2020-02-12 02:40:53] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:40:53] Request finished in 200.5323ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:40:56] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:40:56] Successfully validated the token.
+INFORMATION: [2020-02-12 02:40:56] Authorization was successful.
+INFORMATION: [2020-02-12 02:40:56] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:40:56] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:40:56] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:40:56] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:40:56] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:40:56] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 47.7625ms
+INFORMATION: [2020-02-12 02:40:56] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:40:56] Request finished in 151.0977ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:41:15] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:41:15] Successfully validated the token.
+INFORMATION: [2020-02-12 02:41:15] Authorization was successful.
+INFORMATION: [2020-02-12 02:41:15] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:41:15] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:41:15] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:41:15] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:41:15] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:41:15] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 54.5541ms
+INFORMATION: [2020-02-12 02:41:15] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:41:15] Request finished in 173.0197ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:41:44] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:41:44] Successfully validated the token.
+INFORMATION: [2020-02-12 02:41:44] Authorization was successful.
+INFORMATION: [2020-02-12 02:41:44] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:41:44] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:41:44] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:41:44] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:41:44] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:41:44] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 50.1676ms
+INFORMATION: [2020-02-12 02:41:44] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:41:44] Request finished in 159.9495ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:42:05] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:42:05] Successfully validated the token.
+INFORMATION: [2020-02-12 02:42:05] Authorization was successful.
+INFORMATION: [2020-02-12 02:42:05] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:42:05] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:42:05] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:42:05] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:42:05] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:42:05] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 48.385ms
+INFORMATION: [2020-02-12 02:42:05] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:42:05] Request finished in 168.6488ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:42:18] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:42:18] Successfully validated the token.
+INFORMATION: [2020-02-12 02:42:18] Authorization was successful.
+INFORMATION: [2020-02-12 02:42:18] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:42:18] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:42:18] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:42:18] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:42:18] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:42:18] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 59.0079ms
+INFORMATION: [2020-02-12 02:42:18] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:42:18] Request finished in 176.8774ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:42:38] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:42:38] Successfully validated the token.
+INFORMATION: [2020-02-12 02:42:38] Authorization was successful.
+INFORMATION: [2020-02-12 02:42:38] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:42:38] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:42:38] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:42:38] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:42:38] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:42:38] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 62.5814ms
+INFORMATION: [2020-02-12 02:42:38] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:42:38] Request finished in 194.3517ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:42:59] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:42:59] Successfully validated the token.
+INFORMATION: [2020-02-12 02:42:59] Authorization was successful.
+INFORMATION: [2020-02-12 02:42:59] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:42:59] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:42:59] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:42:59] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:42:59] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:42:59] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 54.407ms
+INFORMATION: [2020-02-12 02:42:59] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:42:59] Request finished in 179.817ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:43:25] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:43:25] Successfully validated the token.
+INFORMATION: [2020-02-12 02:43:25] Authorization was successful.
+INFORMATION: [2020-02-12 02:43:25] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:43:25] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:43:25] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:43:25] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:43:25] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:43:25] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 52.2819ms
+INFORMATION: [2020-02-12 02:43:25] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:43:25] Request finished in 171.8531ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-12 02:45:43] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-12 02:45:43] Successfully validated the token.
+INFORMATION: [2020-02-12 02:45:43] Authorization was successful.
+INFORMATION: [2020-02-12 02:45:43] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:45:43] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-12 02:45:43] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-12 02:45:43] Executed DbCommand (2ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-12 02:45:43] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-12 02:45:43] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 58.4443ms
+INFORMATION: [2020-02-12 02:45:43] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-12 02:45:43] Request finished in 184.5862ms 200 application/json; charset=utf-8

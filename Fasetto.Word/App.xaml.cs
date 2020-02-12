@@ -54,13 +54,13 @@ namespace Fasetto.Word
                 .AddClientDataStore()
                 .AddFasettoWordViewModels()
                 .AddFasettoWordClientServices()
-                .Build();   
+                .Build();
 
             //Ensure the client data store
             await ClientDataStore.EnsureDataStoreAsync();
 
             // Load new settings
-           TaskManager.RunAndForget(ViewModelSettings.LoadAsync);
+            TaskManager.RunAndForget(ViewModelSettings.LoadAsync);
         }
     }
 }

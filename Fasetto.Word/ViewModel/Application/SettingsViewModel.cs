@@ -4,6 +4,7 @@ using System;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using static Fasetto.Word.DI;
+using static Dna.FrameworkDI;
 
 namespace Fasetto.Word
 {
@@ -29,12 +30,20 @@ namespace Fasetto.Word
         public SettingsViewModel()
         {          
 
-            // Create name
-            Name = new TextEntryViewModel
+            // Create first name
+            FirstName = new TextEntryViewModel
             {
-                Label = "Name",
+                Label = "First Name",
                 OriginalText = loadingText,
-                CommitAction = SaveNameAsync
+                CommitAction = SaveFirstNameAsync
+            };
+
+            // Create last name
+            LastName = new TextEntryViewModel
+            {
+                Label = "Last Name",
+                OriginalText = loadingText,
+                CommitAction = SaveLastNameAsync
             };
 
             // Create Username
@@ -67,7 +76,8 @@ namespace Fasetto.Word
             LogoutCommand = new RelayCommand(async () => await LogoutAsync());            
             ClearUserDataCommand = new RelayCommand(ClearUserData);
             LoadCommand = new RelayCommand(async () => await LoadAsync());
-            SaveNameCommand = new RelayCommand(async () => await SaveNameAsync());
+            SaveFirstNameCommand = new RelayCommand(async () => await SaveFirstNameAsync());
+            SaveLastNameCommand = new RelayCommand(async () => await SaveLastNameAsync());
             SaveUsernameCommand = new RelayCommand(async () => await SaveUsernameAsync());
             SaveEmailCommand= new RelayCommand(async () => await SaveEmailAsync());
 
@@ -80,9 +90,14 @@ namespace Fasetto.Word
         #region Properties
 
         /// <summary>
-        /// The current users name
+        /// The current users first name
         /// </summary>
-        public TextEntryViewModel Name { get; set; }
+        public TextEntryViewModel FirstName { get; set; }
+
+        /// <summary>
+        /// The current users last name
+        /// </summary>
+        public TextEntryViewModel LastName { get; set; }
 
         /// <summary>
         /// The current users username
@@ -103,6 +118,35 @@ namespace Fasetto.Word
         /// The text for the logout button
         /// </summary>
         public string LogoutButtonText { get; set; }
+
+        #region Transactional Properties
+
+        /// <summary>
+        /// Indicates if the first name is current being saved
+        /// </summary>
+        public bool FirstNameIsSaving { get; set; }
+
+        /// <summary>
+        /// Indicates if the last name is current being saved
+        /// </summary>
+        public bool LastNameIsSaving { get; set; }
+
+        /// <summary>
+        /// Indicates if the username is current being saved
+        /// </summary>
+        public bool UsernameIsSaving { get; set; }
+
+        /// <summary>
+        /// Indicates if the email is current being saved
+        /// </summary>
+        public bool EmailIsSaving { get; set; }
+
+        /// <summary>
+        /// Indicates if the password is current being changed
+        /// </summary>
+        public bool PasswordIsChanging { get; set; }
+
+        #endregion
 
         #endregion
 
@@ -134,9 +178,14 @@ namespace Fasetto.Word
         public ICommand LoadCommand { get; set; }
 
         /// <summary>
-        /// Saves the current name to the server
+        /// Saves the current first name to the server
         /// </summary>
-        public ICommand SaveNameCommand { get; set; }
+        public ICommand SaveFirstNameCommand { get; set; }
+
+        /// <summary>
+        /// Saves the current last name to the server
+        /// </summary>
+        public ICommand SaveLastNameCommand { get; set; }
 
         /// <summary>
         /// Saves the current username to the server
@@ -194,7 +243,8 @@ namespace Fasetto.Word
         public void ClearUserData()
         {
             //Clear all view models containing the users info
-            Name.OriginalText = loadingText;
+            FirstName.OriginalText = loadingText;
+            LastName.OriginalText = loadingText;
             Username.OriginalText = loadingText;            
             Email.OriginalText = loadingText;
         }
@@ -240,13 +290,78 @@ namespace Fasetto.Word
             }
         }
 
-
         /// <summary>
-        /// Saves the new Name to the server
+        /// Saves the new first Name to the server
         /// </summary>
         /// <param name="self">The details of the view model</param>
         /// <returns>Returns true if successful, false otherwise</returns>
-        public async Task<bool> SaveNameAsync()
+        public async Task<bool> SaveFirstNameAsync()
+        {
+            // Lock this command to ignore any other request while processing
+            return await RunCommandAsync(() => FirstNameIsSaving, async () =>
+            {
+                UpdateUserCredentialsValue()
+
+                // Log it
+                Logger.LogDebugSource("Saving first name...");
+
+                // Get the current known credentials
+                var credentials = await ClientDataStore.GetLoginCredentialsAsync();
+
+                // Log it
+                Logger.LogDebugSource($"First name currently {credentials.FirstName}, updating to {FirstName.OriginalText}");
+
+                // Check if the value is the same. If so...
+                if (credentials.FirstName == FirstName.OriginalText)
+                {
+                    // Log it
+                    Logger.LogDebugSource("First name the same, ignoring");
+
+                    // Return true
+                    return true;
+                }
+
+                // Set the first name
+                credentials.FirstName = FirstName.OriginalText;
+
+                // Update the server with the details
+                var result = await WebRequests.PostAsync<ApiResponse>(
+                   "http://localhost:58727/api/user/profile/update",
+                   // Create the user details to send
+                   new UpdateUserProfileApiModel
+                   {
+                       //Set the new first name
+                       FirstName = credentials.FirstName
+
+                   }, bearerToken: credentials.Token);
+
+                // If the response has an error...
+                if (await result.DisplayErrorIfFailedAsync("Update First Name"))
+                {
+                    // Log it
+                    Logger.LogDebugSource($"Failed to update first name. {result.ErrorMessage}");
+
+                    // Return false
+                    return false;
+                }
+
+                // Log it
+                Logger.LogDebugSource("Succesfully updated First Name. Saving to local database cahche...");
+
+                // Store the new user credentials the data store
+                await ClientDataStore.SaveLoginCredentialsAsync(credentials);
+
+                // Return successful
+                return true;
+            });
+        }
+
+        /// <summary>
+        /// Saves the new last Name to the server
+        /// </summary>
+        /// <param name="self">The details of the view model</param>
+        /// <returns>Returns true if successful, false otherwise</returns>
+        public async Task<bool> SaveLastNameAsync()
         {
             // TODO: Update with server
             await Task.Delay(3000);
@@ -312,15 +427,27 @@ namespace Fasetto.Word
             // Get the stored credentials
             var storedCredentials = await ClientDataStore.GetLoginCredentialsAsync();
 
-            // Set name
-            Name.OriginalText = $"{storedCredentials?.FirstName} {storedCredentials?.LastName}";
+            // Set first name
+            FirstName.OriginalText = storedCredentials?.FirstName;
+
+            // Set last name
+            LastName.OriginalText = storedCredentials?.LastName;
 
             // Set username
             Username.OriginalText = storedCredentials?.Username;
 
             // Set email
             Email.OriginalText = storedCredentials?.Email;
-        }     
+        }
+        
+        /// <summary>
+        /// Updates a specific value in the user credentials
+        /// </summary>
+        /// <returns></returns>
+        private async Task UpdateUserCredentialsValue()
+        {
+
+        }
 
         #endregion
     }
