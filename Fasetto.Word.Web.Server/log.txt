@@ -3538,3 +3538,475 @@ INFORMATION: [2020-02-12 02:45:43] Executing ObjectResult, writing value of type
 INFORMATION: [2020-02-12 02:45:43] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 58.4443ms
 INFORMATION: [2020-02-12 02:45:43] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
 INFORMATION: [2020-02-12 02:45:43] Request finished in 184.5862ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:46:10] User profile is available. Using 'C:\Users\asge4900\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+INFORMATION: [2020-02-13 10:46:10] Request starting HTTP/1.1 GET http://localhost:58727/  
+INFORMATION: [2020-02-13 10:46:10] Executing endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:46:10] Route matched with {action = "Index", controller = "Home"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller Fasetto.Word.Web.Server.HomeController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:46:11] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:46:12] Executed DbCommand (29ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT 1
+INFORMATION: [2020-02-13 10:46:13] Executed DbCommand (67ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+
+IF EXISTS
+    (SELECT *
+     FROM [sys].[objects] o
+     WHERE [o].[type] = 'U'
+     AND [o].[is_ms_shipped] = 0
+     AND NOT EXISTS (SELECT *
+         FROM [sys].[extended_properties] AS [ep]
+         WHERE [ep].[major_id] = [o].[object_id]
+             AND [ep].[minor_id] = 0
+             AND [ep].[class] = 1
+             AND [ep].[name] = N'microsoft_database_tools_support'
+    )
+)
+SELECT 1 ELSE SELECT 0
+INFORMATION: [2020-02-13 10:46:13] Executed DbCommand (7ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [Settings] AS [s]) THEN CAST(1 AS bit)
+    ELSE CAST(0 AS bit)
+END
+INFORMATION: [2020-02-13 10:46:13] Executing ViewResult, running view Index.
+INFORMATION: [2020-02-13 10:46:13] Executed ViewResult - view Index executed in 153.1221ms.
+INFORMATION: [2020-02-13 10:46:13] Executed action Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server) in 2640.5427ms
+INFORMATION: [2020-02-13 10:46:13] Executed endpoint 'Fasetto.Word.Web.Server.HomeController.Index (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:46:13] Request finished in 2802.7916ms 200 text/html; charset=utf-8
+INFORMATION: [2020-02-13 10:46:30] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-13 10:46:30] Successfully validated the token.
+INFORMATION: [2020-02-13 10:46:30] Authorization was successful.
+INFORMATION: [2020-02-13 10:46:30] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:46:30] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:46:30] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:46:30] Executed DbCommand (42ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:46:30] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-13 10:46:30] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 278.9259ms
+INFORMATION: [2020-02-13 10:46:30] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:46:30] Request finished in 644.8568ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:46:33] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-13 10:46:33] Successfully validated the token.
+INFORMATION: [2020-02-13 10:46:33] Authorization was successful.
+INFORMATION: [2020-02-13 10:46:33] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:46:33] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:46:33] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:46:33] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:46:33] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-13 10:46:33] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 91.5989ms
+INFORMATION: [2020-02-13 10:46:33] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:46:33] Request finished in 214.3332ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:46:44] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 64
+INFORMATION: [2020-02-13 10:46:44] Successfully validated the token.
+INFORMATION: [2020-02-13 10:46:44] Authorization was successful.
+INFORMATION: [2020-02-13 10:46:44] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:46:44] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:46:44] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:46:44] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:46:44] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-13 10:46:44] Executed DbCommand (1ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-13 10:46:45] Executed DbCommand (5ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-13 10:46:45] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-13 10:46:45] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 286.5292ms
+INFORMATION: [2020-02-13 10:46:45] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:46:45] Request finished in 403.1505ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:47:01] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 65
+INFORMATION: [2020-02-13 10:47:01] Successfully validated the token.
+INFORMATION: [2020-02-13 10:47:01] Authorization was successful.
+INFORMATION: [2020-02-13 10:47:01] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:01] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:47:01] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:47:01] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:47:01] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-13 10:47:01] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-13 10:47:01] Executed DbCommand (0ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-13 10:47:01] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-13 10:47:01] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 95.1127ms
+INFORMATION: [2020-02-13 10:47:01] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:01] Request finished in 208.1472ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:47:05] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-13 10:47:05] Successfully validated the token.
+INFORMATION: [2020-02-13 10:47:05] Authorization was successful.
+INFORMATION: [2020-02-13 10:47:05] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:05] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:47:05] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:47:05] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:47:05] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-13 10:47:05] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 50.9877ms
+INFORMATION: [2020-02-13 10:47:05] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:05] Request finished in 168.6408ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:47:10] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 66
+INFORMATION: [2020-02-13 10:47:10] Successfully validated the token.
+INFORMATION: [2020-02-13 10:47:10] Authorization was successful.
+INFORMATION: [2020-02-13 10:47:10] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:10] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:47:10] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:47:10] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:47:10] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-13 10:47:10] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-13 10:47:10] Executed DbCommand (0ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-13 10:47:10] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-13 10:47:10] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 101.0349ms
+INFORMATION: [2020-02-13 10:47:10] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:10] Request finished in 218.2985ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:47:26] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 64
+INFORMATION: [2020-02-13 10:47:26] Successfully validated the token.
+INFORMATION: [2020-02-13 10:47:26] Authorization was successful.
+INFORMATION: [2020-02-13 10:47:26] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:26] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:47:26] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:47:26] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:47:26] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-13 10:47:26] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-13 10:47:26] Executed DbCommand (0ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-13 10:47:26] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-13 10:47:26] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 96.7956ms
+INFORMATION: [2020-02-13 10:47:26] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:26] Request finished in 207.515ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:47:32] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 64
+INFORMATION: [2020-02-13 10:47:32] Successfully validated the token.
+INFORMATION: [2020-02-13 10:47:32] Authorization was successful.
+INFORMATION: [2020-02-13 10:47:32] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:32] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:47:32] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:47:32] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:47:32] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-13 10:47:32] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-13 10:47:32] Executed DbCommand (1ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-13 10:47:32] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-13 10:47:32] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 120.1505ms
+INFORMATION: [2020-02-13 10:47:32] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:32] Request finished in 227.3773ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:47:39] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 69
+INFORMATION: [2020-02-13 10:47:39] Successfully validated the token.
+INFORMATION: [2020-02-13 10:47:39] Authorization was successful.
+INFORMATION: [2020-02-13 10:47:39] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:39] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:47:39] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:47:39] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:47:39] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-13 10:47:39] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-13 10:47:39] Executed DbCommand (0ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-13 10:47:39] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-13 10:47:40] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 121.3776ms
+INFORMATION: [2020-02-13 10:47:40] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:40] Request finished in 274.3732ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:47:51] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-13 10:47:51] Successfully validated the token.
+INFORMATION: [2020-02-13 10:47:51] Authorization was successful.
+INFORMATION: [2020-02-13 10:47:51] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:51] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:47:51] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:47:51] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:47:51] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-13 10:47:51] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 69.5894ms
+INFORMATION: [2020-02-13 10:47:51] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:47:51] Request finished in 258.3154ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:48:02] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-13 10:48:02] Successfully validated the token.
+INFORMATION: [2020-02-13 10:48:02] Authorization was successful.
+INFORMATION: [2020-02-13 10:48:02] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:48:02] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:48:02] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:48:02] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:48:02] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-13 10:48:02] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 59.8696ms
+INFORMATION: [2020-02-13 10:48:02] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:48:02] Request finished in 170.7057ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:48:05] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-13 10:48:05] Successfully validated the token.
+INFORMATION: [2020-02-13 10:48:05] Authorization was successful.
+INFORMATION: [2020-02-13 10:48:05] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:48:05] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:48:05] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:48:05] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:48:05] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-13 10:48:05] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 57.7986ms
+INFORMATION: [2020-02-13 10:48:05] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:48:05] Request finished in 246.8089ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:48:13] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 76
+INFORMATION: [2020-02-13 10:48:13] Successfully validated the token.
+INFORMATION: [2020-02-13 10:48:13] Authorization was successful.
+INFORMATION: [2020-02-13 10:48:13] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:48:13] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:48:14] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:48:14] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:48:14] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-13 10:48:14] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-13 10:48:14] Executed DbCommand (1ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-13 10:48:14] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-13 10:48:14] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 107.7713ms
+INFORMATION: [2020-02-13 10:48:14] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:48:14] Request finished in 230.8198ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:48:22] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 69
+INFORMATION: [2020-02-13 10:48:22] Successfully validated the token.
+INFORMATION: [2020-02-13 10:48:22] Authorization was successful.
+INFORMATION: [2020-02-13 10:48:22] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:48:22] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:48:22] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:48:22] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:48:22] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-13 10:48:22] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-13 10:48:22] Executed DbCommand (1ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-13 10:48:22] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-13 10:48:22] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 104.4082ms
+INFORMATION: [2020-02-13 10:48:22] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:48:22] Request finished in 218.8945ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:52:33] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-13 10:52:33] Successfully validated the token.
+INFORMATION: [2020-02-13 10:52:33] Authorization was successful.
+INFORMATION: [2020-02-13 10:52:33] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:52:33] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:52:33] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:52:33] Executed DbCommand (7ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:52:33] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-13 10:52:33] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 99.6306ms
+INFORMATION: [2020-02-13 10:52:33] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:52:33] Request finished in 213.2842ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:52:36] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-13 10:52:36] Successfully validated the token.
+INFORMATION: [2020-02-13 10:52:36] Authorization was successful.
+INFORMATION: [2020-02-13 10:52:36] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:52:36] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:52:36] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:52:36] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:52:36] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-13 10:52:36] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 53.9738ms
+INFORMATION: [2020-02-13 10:52:36] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:52:36] Request finished in 227.5337ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:52:43] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 67
+INFORMATION: [2020-02-13 10:52:43] Successfully validated the token.
+INFORMATION: [2020-02-13 10:52:43] Authorization was successful.
+INFORMATION: [2020-02-13 10:52:43] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:52:43] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:52:43] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:52:43] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:52:43] Executed DbCommand (2ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-13 10:52:43] Executed DbCommand (3ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-13 10:52:43] Executed DbCommand (5ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-13 10:52:43] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-13 10:52:43] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 112.2862ms
+INFORMATION: [2020-02-13 10:52:43] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:52:43] Request finished in 237.4885ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:55:16] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-13 10:55:16] Successfully validated the token.
+INFORMATION: [2020-02-13 10:55:16] Authorization was successful.
+INFORMATION: [2020-02-13 10:55:16] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:55:16] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:55:16] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:55:16] Executed DbCommand (0ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:55:16] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-13 10:55:16] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 51.0494ms
+INFORMATION: [2020-02-13 10:55:16] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:55:16] Request finished in 168.0272ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:55:18] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile application/json 0
+INFORMATION: [2020-02-13 10:55:18] Successfully validated the token.
+INFORMATION: [2020-02-13 10:55:18] Authorization was successful.
+INFORMATION: [2020-02-13 10:55:18] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:55:18] Route matched with {action = "GetUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse`1[Fasetto.Word.Lib.UserProfileDetailsApiModel]] GetUserProfileAsync() on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:55:18] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:55:18] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:55:18] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse`1[[Fasetto.Word.Lib.UserProfileDetailsApiModel, Fasetto.Word.Lib, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]'.
+INFORMATION: [2020-02-13 10:55:18] Executed action Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server) in 55.1699ms
+INFORMATION: [2020-02-13 10:55:18] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.GetUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:55:18] Request finished in 234.1003ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:55:25] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 64
+INFORMATION: [2020-02-13 10:55:25] Successfully validated the token.
+INFORMATION: [2020-02-13 10:55:25] Authorization was successful.
+INFORMATION: [2020-02-13 10:55:25] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:55:25] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:55:25] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:55:25] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:55:25] Executed DbCommand (0ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-13 10:55:25] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-13 10:55:25] Executed DbCommand (0ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-13 10:55:25] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-13 10:55:25] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 100.9118ms
+INFORMATION: [2020-02-13 10:55:25] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:55:25] Request finished in 272.7628ms 200 application/json; charset=utf-8
+INFORMATION: [2020-02-13 10:55:31] Request starting HTTP/1.1 POST http://localhost:58727/api/user/profile/update application/json 67
+INFORMATION: [2020-02-13 10:55:31] Successfully validated the token.
+INFORMATION: [2020-02-13 10:55:31] Authorization was successful.
+INFORMATION: [2020-02-13 10:55:31] Executing endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:55:31] Route matched with {action = "UpdateUserProfile", controller = "Api"}. Executing controller action with signature System.Threading.Tasks.Task`1[Fasetto.Word.Lib.ApiResponse] UpdateUserProfileAsync(Fasetto.Word.Lib.UpdateUserProfileApiModel) on controller Fasetto.Word.Web.Server.ApiController (Fasetto.Word.Web.Server).
+INFORMATION: [2020-02-13 10:55:31] Entity Framework Core 3.1.1 initialized 'ApplicationDbContext' using provider 'Microsoft.EntityFrameworkCore.SqlServer' with options: None
+INFORMATION: [2020-02-13 10:55:31] Executed DbCommand (1ms) [Parameters=[@__p_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[Id] = @__p_0
+INFORMATION: [2020-02-13 10:55:31] Executed DbCommand (1ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedUserName] = @__normalizedUserName_0
+INFORMATION: [2020-02-13 10:55:31] Executed DbCommand (0ms) [Parameters=[@__normalizedEmail_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [a].[Id], [a].[AccessFailedCount], [a].[ConcurrencyStamp], [a].[Email], [a].[EmailConfirmed], [a].[FirstName], [a].[LastName], [a].[LockoutEnabled], [a].[LockoutEnd], [a].[NormalizedEmail], [a].[NormalizedUserName], [a].[PasswordHash], [a].[PhoneNumber], [a].[PhoneNumberConfirmed], [a].[SecurityStamp], [a].[TwoFactorEnabled], [a].[UserName]
+FROM [AspNetUsers] AS [a]
+WHERE [a].[NormalizedEmail] = @__normalizedEmail_0
+INFORMATION: [2020-02-13 10:55:31] Executed DbCommand (0ms) [Parameters=[@p16='?' (Size = 450), @p0='?' (DbType = Int32), @p1='?' (Size = 4000), @p17='?' (Size = 4000), @p2='?' (Size = 256), @p3='?' (DbType = Boolean), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (DbType = Boolean), @p7='?' (DbType = DateTimeOffset), @p8='?' (Size = 256), @p9='?' (Size = 256), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (DbType = Boolean), @p13='?' (Size = 4000), @p14='?' (DbType = Boolean), @p15='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [AspNetUsers] SET [AccessFailedCount] = @p0, [ConcurrencyStamp] = @p1, [Email] = @p2, [EmailConfirmed] = @p3, [FirstName] = @p4, [LastName] = @p5, [LockoutEnabled] = @p6, [LockoutEnd] = @p7, [NormalizedEmail] = @p8, [NormalizedUserName] = @p9, [PasswordHash] = @p10, [PhoneNumber] = @p11, [PhoneNumberConfirmed] = @p12, [SecurityStamp] = @p13, [TwoFactorEnabled] = @p14, [UserName] = @p15
+WHERE [Id] = @p16 AND [ConcurrencyStamp] = @p17;
+SELECT @@ROWCOUNT;
+INFORMATION: [2020-02-13 10:55:32] Executing ObjectResult, writing value of type 'Fasetto.Word.Lib.ApiResponse'.
+INFORMATION: [2020-02-13 10:55:32] Executed action Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server) in 122.0717ms
+INFORMATION: [2020-02-13 10:55:32] Executed endpoint 'Fasetto.Word.Web.Server.ApiController.UpdateUserProfileAsync (Fasetto.Word.Web.Server)'
+INFORMATION: [2020-02-13 10:55:32] Request finished in 302.957ms 200 application/json; charset=utf-8
