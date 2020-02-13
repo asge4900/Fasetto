@@ -269,7 +269,9 @@ namespace Fasetto.Word
 
             // Load user profile details from server
             var result = await WebRequests.PostAsync<ApiResponse<UserProfileDetailsApiModel>>(
-                "http://localhost:58727/api/user/profile", 
+                // Set URL
+                RouteHelpers.GetAbsoluteRoute(ApiRoutes.GetUserProfile),
+                // Pass in user Token
                 bearerToken: token);
 
             // If it was successful...
@@ -390,11 +392,61 @@ namespace Fasetto.Word
         /// <returns>Returns true if successful, false otherwise</returns>
         public async Task<bool> SavePasswordAsync()
         {
-            // TODO: Update with server
-            await Task.Delay(3000);
+            // Lock this command to ignore any other request while processing
+            return await RunCommandAsync(() => PasswordIsChanging, async () =>
+            {
+                // Log it
+                Logger.LogDebugSource("Changing password...");
 
-            // Return succes
-            return true;
+                // Get the current known credentials
+                var credentials = await ClientDataStore.GetLoginCredentialsAsync();
+
+                // Make sure the user has entered the same password
+                if (Password.NewPassword.Unsecure() != Password.ConfirmPassword.Unsecure())
+                {
+                    // Display error
+                    await UI.ShowMessage(new MessageBoxDialogViewModel
+                    {
+                        // TODO: Localize
+                        Title = "Password Mismatch",
+                        Message = "New password and confirm password must match"
+                    });
+
+                    // Return fail
+                    return false;
+                }
+
+                // Update the server with the new password
+                var result = await WebRequests.PostAsync<ApiResponse>(
+                    // Set URL
+                    RouteHelpers.GetAbsoluteRoute(ApiRoutes.UpdateUserPassword),
+                    // Create Api model
+                    new UpdateUserPasswordApiModel
+                    {
+                        CurrentPassword = Password.CurrentPassword.Unsecure(),
+                        NewPassword = Password.NewPassword.Unsecure()
+                    },
+                    // Pass in user Token
+                    bearerToken: credentials.Token);
+
+                // If the response has an error...
+                if (await result.DisplayErrorIfFailedAsync($"Change Password"))
+                {
+                    // Log it
+                    Logger.LogDebugSource($"Failed to change pasword. {result.ErrorMessage}");
+
+                    // Return false
+                    return false;
+                }
+
+                // Otherwise, we succeeded...
+
+                // Log it
+                Logger.LogDebugSource($"Succesfully changed password");
+
+                // Return successful
+                return true;
+            });
         }
 
         #endregion
@@ -471,10 +523,11 @@ namespace Fasetto.Word
 
             // Update the server with the details
             var result = await WebRequests.PostAsync<ApiResponse>(
-               "http://localhost:58727/api/user/profile/update",
+                // Set URL
+                RouteHelpers.GetAbsoluteRoute(ApiRoutes.UpdateUserProfile),
                // Pass the api model
                updateApiModel,
-               // Create the user details to send
+               // Pass in user Token
                bearerToken: credentials.Token);
 
             // If the response has an error...

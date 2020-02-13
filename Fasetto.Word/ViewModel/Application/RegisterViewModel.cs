@@ -65,9 +65,10 @@ namespace Fasetto.Word
         public async Task RegisterAsync(object parameter)
         {
             // Call the server and attempt to register with the provided credentials
-            // TODO: Move all URLS and API routes to static class
             var result = await WebRequests.PostAsync<ApiResponse<RegisterResultApiModel>>(
-                "http://localhost:58727/api/register",
+                // Set URL
+                RouteHelpers.GetAbsoluteRoute(ApiRoutes.Register),
+                // Create api model
                 new RegisterCredentialsApiModel
                 {
                     Username = Username,
