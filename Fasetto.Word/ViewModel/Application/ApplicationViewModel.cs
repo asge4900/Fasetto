@@ -1,5 +1,6 @@
 ﻿using Fasetto.Word.Lib;
 using System.Threading.Tasks;
+using System.Windows.Input;
 using static Fasetto.Word.DI;
 using static Fasetto.Word.Lib.CoreDI;
 
@@ -18,6 +19,14 @@ namespace Fasetto.Word
         private bool settingsMenuVisible;
 
         #endregion
+
+        public ApplicationViewModel()
+        {
+            // Create the commands
+            OpenChatCommand = new RelayCommand(OpenChat);
+            OpenContactsCommand = new RelayCommand(OpenContacts);
+            OpenMediaCommand = new RelayCommand(OpenMedia);
+        }
 
         #region Properties
 
@@ -42,7 +51,7 @@ namespace Fasetto.Word
         /// <summary>
         /// True if the settings menu should be shown
         /// </summary>
-        public bool SettingsMenuVisible 
+        public bool SettingsMenuVisible
         {
             get => settingsMenuVisible;
             set
@@ -66,7 +75,52 @@ namespace Fasetto.Word
             }
         }
 
+        /// <summary>
+        /// Determines the currently visible side menu content
+        /// </summary>
+        public SideMenuContent CurrentSideMenuContent { get; set; } = SideMenuContent.Chat;
+
         #endregion
+
+        #region Public Commands
+
+        /// <summary>
+        /// The command to change the side menu to the Chat
+        /// </summary>
+        public ICommand OpenChatCommand { get; set; }
+
+        /// <summary>
+        /// The command to change the side menu to the Contact
+        /// </summary>
+        public ICommand OpenContactsCommand { get; set; }
+
+        /// <summary>
+        /// The command to change the side menu to Media
+        /// </summary>
+        public ICommand OpenMediaCommand { get; set; }
+
+        #endregion
+
+        #region Commands Methods
+
+        public void OpenChat()
+        {
+
+        }
+
+        public void OpenContacts()
+        {
+
+        }
+
+        public void OpenMedia()
+        {
+
+        }
+
+        #endregion
+
+        #region Public Helper Methods
 
         /// <summary>
         /// Navigates to the specified page
@@ -106,5 +160,7 @@ namespace Fasetto.Word
             //Go to chat page
             ViewModelApplication.GoToPage(ApplicationPage.Chat);
         }
+
+        #endregion
     }
 }

@@ -147,6 +147,16 @@ namespace Fasetto.Word
         /// </summary>
         public bool PasswordIsChanging { get; set; }
 
+        /// <summary>
+        /// Indicates if the settings details are current being loaded
+        /// </summary>
+        public bool SettingsLoading { get; set; }
+
+        /// <summary>
+        /// Indicates if the user is currently logging out
+        /// </summary>
+        public bool LoggingOut { get; set; }
+
         #endregion
 
         #endregion
@@ -225,17 +235,22 @@ namespace Fasetto.Word
         /// </summary>
         public async Task LogoutAsync()
         {
-            //TODO: Confirm the user wants to logout
+            // Lock this command to ignore any other request while processing
+            await RunCommandAsync(() => LoggingOut, async () =>
+            {
 
-            //Clear any user data/cache
-            await ClientDataStore.ClearAllLoginCredentialsAsync();
+                //TODO: Confirm the user wants to logout
 
-            //Clean all application level view models that contain
-            //any information about the current user
-            ClearUserData();
+                //Clear any user data/cache
+                await ClientDataStore.ClearAllLoginCredentialsAsync();
 
-            // Go to login page
-            ViewModelApplication.GoToPage(ApplicationPage.Login);
+                //Clean all application level view models that contain
+                //any information about the current user
+                ClearUserData();
+
+                // Go to login page
+                ViewModelApplication.GoToPage(ApplicationPage.Login);
+            });
         }
 
         /// <summary>
@@ -254,29 +269,35 @@ namespace Fasetto.Word
         /// Sets the settings view model properties based on the data in the client data store
         /// </summary>
         public async Task LoadAsync()
-        {  
-            // Update values from local cache
-            await UpdateValuesFromLocalStoreAsync();
-
-            var token = (await ClientDataStore.GetLoginCredentialsAsync()).Token;
-
-            // If we dont have a token (so we are not logged in...)
-            if (string.IsNullOrEmpty(token))
+        {
+            // Lock this command to ignore any other request while processing
+            await RunCommandAsync(() => SettingsLoading, async () =>
             {
-                // Then do nothing more
-                return;
-            }
+                // Update values from local cache
+                await UpdateValuesFromLocalStoreAsync();
 
-            // Load user profile details from server
-            var result = await WebRequests.PostAsync<ApiResponse<UserProfileDetailsApiModel>>(
-                // Set URL
-                RouteHelpers.GetAbsoluteRoute(ApiRoutes.GetUserProfile),
-                // Pass in user Token
-                bearerToken: token);
+                var token = (await ClientDataStore.GetLoginCredentialsAsync()).Token;
 
-            // If it was successful...
-            if (result.Successful)
-            {
+                // If we dont have a token (so we are not logged in...)
+                if (string.IsNullOrEmpty(token))
+                {
+                    // Then do nothing more
+                    return;
+                }
+
+                // Load user profile details from server
+                var result = await WebRequests.PostAsync<ApiResponse<UserProfileDetailsApiModel>>(
+                    // Set URL
+                    RouteHelpers.GetAbsoluteRoute(ApiRoutes.GetUserProfile),
+                    // Pass in user Token
+                    bearerToken: token);
+
+                // If the reposne has an error...
+                if (await result.DisplayErrorIfFailedAsync("Load User Details Failed"))
+                    //We are done
+                    return;
+
+
                 // TODO: Should we check if the values are diffent before saving?
 
                 // Create data model from the response
@@ -284,13 +305,13 @@ namespace Fasetto.Word
 
                 // Re-add our known token
                 dataModel.Token = token;
-                
+
                 // Save the new information in the data store
                 await ClientDataStore.SaveLoginCredentialsAsync(dataModel);
 
                 // Update values from local cache
                 await UpdateValuesFromLocalStoreAsync();
-            }
+            });            
         }
 
         /// <summary>
