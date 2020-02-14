@@ -50,7 +50,11 @@
                                         
                                         <!--Title bar-->
                                         <RowDefinition Height="{Binding TitleHeightGridLength, FallbackValue=42}" />
-                                        
+
+                                        <!--#region Internet Conntection Bar -->
+                                        <RowDefinition Height="Auto" />
+                                        <!--#endregion-->
+
                                         <!--Window Content-->
                                         <RowDefinition Height="*" />
 
@@ -92,10 +96,28 @@
                                             <Button Command="{Binding CloseCommand}" Style="{StaticResource WindowCloseButton}" Content="X" />
                                         </StackPanel>
                                         
-                                    </Grid>  
-                                    
+                                    </Grid>
+
+                                    <!--#region No Internet Connection Bar -->
+                                    <Border Background="{StaticResource WordOrangeBrush}"
+                                            local:AnimateSlideInFromTopProperty.Value="{Binding ApplicationViewModel.ServerReachable, Source={x:Static local:ViewModelLocator.Instance}, Converter={local:BooleanInvertConverter}}"
+                                            Grid.Row="1"
+                                            Padding="10"
+                                            Panel.ZIndex="1"
+                                            >
+
+                                        <Label HorizontalAlignment="Center"
+                                               FontFamily="{StaticResource LatoBold}"
+                                               Foreground="{StaticResource ForegroundLightBrush}"
+                                               >
+                                            No internet
+                                        </Label>
+
+                                    </Border>
+                                    <!--#endregion-->
+
                                     <!--Page Content-->
-                                    <Border Grid.Row="1" 
+                                    <Border Grid.Row="2" 
                                             Padding="{Binding InnerContentPadding}"
                                             ClipToBounds="True">
                                         <ContentPresenter Content="{TemplateBinding Content}" />
