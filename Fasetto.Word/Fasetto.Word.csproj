@@ -327,6 +327,7 @@
     <Compile Include="ValueConverters\PopupContentConverter.cs" />
     <Compile Include="ValueConverters\SentByMeToBackgroundConverter.cs" />
     <Compile Include="ValueConverters\SentByMeToAlignmentConverter.cs" />
+    <Compile Include="ValueConverters\SideMenuContentConverter.cs" />
     <Compile Include="ValueConverters\TimeToReadTimeConverter.cs" />
     <Compile Include="ValueConverters\TimeToDisplayTimeConverter.cs" />
     <Compile Include="ValueConverters\IoCConverter.cs" />

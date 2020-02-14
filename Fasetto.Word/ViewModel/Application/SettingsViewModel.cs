@@ -273,10 +273,13 @@ namespace Fasetto.Word
             // Lock this command to ignore any other request while processing
             await RunCommandAsync(() => SettingsLoading, async () =>
             {
-                // Update values from local cache
-                await UpdateValuesFromLocalStoreAsync();
+                // Store single transcient instance of client data store
+                var scopedClientDataStore = ClientDataStore;
 
-                var token = (await ClientDataStore.GetLoginCredentialsAsync()).Token;
+                // Update values from local cache
+                await UpdateValuesFromLocalStoreAsync(scopedClientDataStore);
+
+                var token = (await scopedClientDataStore.GetLoginCredentialsAsync())?.Token;
 
                 // If we dont have a token (so we are not logged in...)
                 if (string.IsNullOrEmpty(token))
@@ -307,10 +310,10 @@ namespace Fasetto.Word
                 dataModel.Token = token;
 
                 // Save the new information in the data store
-                await ClientDataStore.SaveLoginCredentialsAsync(dataModel);
+                await scopedClientDataStore.SaveLoginCredentialsAsync(dataModel);
 
                 // Update values from local cache
-                await UpdateValuesFromLocalStoreAsync();
+                await UpdateValuesFromLocalStoreAsync(scopedClientDataStore);
             });            
         }
 
@@ -480,10 +483,10 @@ namespace Fasetto.Word
         /// to this view model
         /// </summary>
         /// <returns></returns>
-        private async Task UpdateValuesFromLocalStoreAsync()
+        private async Task UpdateValuesFromLocalStoreAsync(IClientDataStore clientDataStore)
         {
             // Get the stored credentials
-            var storedCredentials = await ClientDataStore.GetLoginCredentialsAsync();
+            var storedCredentials = await clientDataStore.GetLoginCredentialsAsync();
 
             // Set first name
             FirstName.OriginalText = storedCredentials?.FirstName;

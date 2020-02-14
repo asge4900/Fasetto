@@ -103,19 +103,31 @@ namespace Fasetto.Word
 
         #region Commands Methods
 
+        /// <summary>
+        /// Changes the current side menu to chat
+        /// </summary>
         public void OpenChat()
         {
-
+            // Set the current side menu to chat
+            CurrentSideMenuContent = SideMenuContent.Chat;
         }
 
+        /// <summary>
+        /// Changes the current side menu to contact
+        /// </summary>
         public void OpenContacts()
         {
-
+            // Set the current side menu to contact
+            CurrentSideMenuContent = SideMenuContent.Contacts;
         }
 
+        /// <summary>
+        /// Changes the current side menu to Media
+        /// </summary>
         public void OpenMedia()
         {
-
+            // Set the current side menu to media
+            CurrentSideMenuContent = SideMenuContent.Media;
         }
 
         #endregion
